@@ -103,12 +103,10 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven { url "https://maven.blamejared.com/" }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.14'
-    implementation fg.deobf("team.lodestar.lodestone:lodestone:1.19.2-1.4.53")
 }
 
 jar {

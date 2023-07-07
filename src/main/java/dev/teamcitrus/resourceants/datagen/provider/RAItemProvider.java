@@ -6,12 +6,12 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
+import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-import team.lodestar.lodestone.systems.datagen.providers.LodestoneItemModelProvider;
 
-public class RAItemProvider extends LodestoneItemModelProvider {
+public class RAItemProvider extends ItemModelProvider {
     public RAItemProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, ResourceAnts.MODID, existingFileHelper);
     }
