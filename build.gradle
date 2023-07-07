@@ -21,7 +21,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
 
-version = '1.0'
+version = '1.0.0'
 group = 'dev.teamcitrusmods.resourceants'
 archivesBaseName = 'resourceants'
 
