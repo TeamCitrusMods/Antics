@@ -2,7 +2,6 @@ package dev.teamcitrus.resourceants.item;
 
 import dev.teamcitrus.resourceants.ResourceAnts;
 import dev.teamcitrus.resourceants.registry.RABlockRegistry;
-import dev.teamcitrus.resourceants.registry.RAItemRegistry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
