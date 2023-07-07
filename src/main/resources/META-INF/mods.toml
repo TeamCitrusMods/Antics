@@ -6,7 +6,7 @@ issueTrackerURL="https://github.com/TeamCitrusMods/Resource-Ants/issues"
 [[mods]]
 modId="resourceants"
 version="${file.jarVersion}"
-displayName="Example Mod"
+displayName="Resource Ants"
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
 logoFile="resourceants.png"
 authors="ZestyBlaze, ElysiaSilly"

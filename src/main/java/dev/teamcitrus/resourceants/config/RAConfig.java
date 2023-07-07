@@ -16,6 +16,6 @@ public class RAConfig {
 
     private static void setupClientConfig(ForgeConfigSpec.Builder builder) {
         tierDisplay = builder.comment("Changes the tooltip for the mushrooms as to how it displays the mushroom's tier")
-                .defineEnum("tierDisplayChoice", TierDisplayOptions.TEXT);
+                .defineEnum("tierDisplayChoice", TierDisplayOptions.NUMERICAL);
     }
 }

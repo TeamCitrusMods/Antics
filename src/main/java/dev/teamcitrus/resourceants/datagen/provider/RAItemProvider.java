@@ -32,6 +32,6 @@ public class RAItemProvider extends ItemModelProvider {
         getBuilder(location.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation(location.getNamespace(), "item/mushroom_top"))
-                .texture("layer1", new ResourceLocation(location.getNamespace(), "item/mushroom_bottom"));
+                .texture("layer1", new ResourceLocation(location.getNamespace(), "item/mushroom_stem"));
     }
 }

@@ -1,27 +1,27 @@
 package dev.teamcitrus.resourceants.util;
 
 import dev.teamcitrus.resourceants.config.RAConfig;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.item.Rarity;
 
 public enum MushroomResourceTiers {
-    ONE("tier.one", "One", "1", RARarities.TIER_ONE),
-    TWO("tier.two", "Two", "2", RARarities.TIER_TWO),
-    THREE("tier.three", "Three", "3", RARarities.TIER_THREE),
-    FOUR("tier.four", "Four", "4", RARarities.TIER_FOUR),
-    FIVE("tier.five", "Five", "5", RARarities.TIER_FIVE);
+    ONE("tier.one", "One", "1", ChatFormatting.YELLOW),
+    TWO("tier.two", "Two", "2", ChatFormatting.GREEN),
+    THREE("tier.three", "Three", "3", ChatFormatting.GOLD),
+    FOUR("tier.four", "Four", "4", ChatFormatting.AQUA),
+    FIVE("tier.five", "Five", "5", ChatFormatting.RED);
 
     private final String lang;
     private final String displayStr;
     private final String displayNum;
-    private final Rarity rarity;
+    private final ChatFormatting formatting;
 
-    MushroomResourceTiers(String key, String name, String num, Rarity rarity) {
+    MushroomResourceTiers(String key, String name, String num, ChatFormatting formatting) {
         this.lang = key;
         this.displayStr = name;
         this.displayNum = num;
-        this.rarity = rarity;
+        this.formatting = formatting;
     }
 
     public String getLangKey() {
@@ -36,14 +36,10 @@ public enum MushroomResourceTiers {
         return this.displayNum;
     }
 
-    public Rarity getRarity() {
-        return this.rarity;
-    }
-
     public MutableComponent getDisplayName() {
         return Component.literal(RAConfig.tierDisplay.get().equals(TierDisplayOptions.TEXT)
                 ? getNameStr()
                 : getNameInt()
-        ).withStyle(this.rarity.getStyleModifier());
+        ).withStyle(this.formatting);
     }
 }

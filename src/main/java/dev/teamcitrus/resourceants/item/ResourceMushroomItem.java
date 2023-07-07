@@ -10,30 +10,29 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.RedstoneTorchBlock;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class ResourceMushroomItem extends BlockItem {
-    private final ResourceMushroomBlock block;
-
-    private static final Tooltip TIER = new Tooltip("tooltip.resourceants.tier");
-
     public ResourceMushroomItem(ResourceMushroomBlock pBlock) {
-        super(pBlock, new Properties().tab(ResourceAnts.TAB).rarity(pBlock.getTier().getRarity()));
-        this.block = pBlock;
+        super(pBlock, new Properties().tab(ResourceAnts.TAB));
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        var arg = block.getTier().getDisplayName();
-
-        pTooltip.add(TIER.args(arg).build());
+        pTooltip.add(new Tooltip("tooltip.resourceants.tier").args(((ResourceMushroomBlock)getBlock()).getTier().getDisplayName()).build());
     }
 
     @Override
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
         return itemStack.getItem() == RABlockRegistry.COAL_MUSHROOM.get().asItem() ? 200 : 0;
+    }
+
+    @Override
+    public boolean isPiglinCurrency(ItemStack stack) {
+        return stack.getItem() == RABlockRegistry.GOLD_MUSHROOM.get().asItem();
     }
 
     @Override

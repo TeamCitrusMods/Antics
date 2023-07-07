@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "resourceants:item/mushroom_top",
-    "layer1": "resourceants:item/mushroom_bottom"
+    "layer1": "resourceants:item/mushroom_stem"
   }
 }
