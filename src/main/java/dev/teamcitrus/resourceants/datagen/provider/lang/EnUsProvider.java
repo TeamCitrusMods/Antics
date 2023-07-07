@@ -1,6 +1,7 @@
 package dev.teamcitrus.resourceants.datagen.provider.lang;
 
 import dev.teamcitrus.resourceants.ResourceAnts;
+import dev.teamcitrus.resourceants.util.MushroomResourceTiers;
 import dev.teamcitrus.resourceants.registry.RABlockRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -13,11 +14,16 @@ public class EnUsProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup.resourceants", "Resource Ants");
+        add("tooltip.resourceants.tier", "Tier: %s");
 
         RABlockRegistry.BLOCKS.getEntries().forEach(b -> {
             String name = b.get().getDescriptionId().replaceFirst("block\\.resourceants\\.", "");
             add(b.get().getDescriptionId(), toTitleCase(name, "_"));
         });
+
+        for (MushroomResourceTiers tier : MushroomResourceTiers.values()) {
+            add(tier.getLangKey(), tier.getNameStr());
+        }
     }
 
     @Override
@@ -26,8 +32,8 @@ public class EnUsProvider extends LanguageProvider {
     }
 
     /**
-     * A method grabbed from Lodestone Lib to capitalise names
-     * Credit to Egshels and SammySemiColon for the Library
+     * A method grabbed from Lodestone Lib by Egshels and SammySemiColon to capitalise names and replace [regex] with a space
+     * <a href="https://github.com/LodestarMC/Lodestone/blob/65c087683cc1ac2698c4365d1026b00979234443/src/main/java/team/lodestar/lodestone/helpers/DataHelper.java#L36C30-L36C30">...</a>
      */
     private static String toTitleCase(String givenString, String regex) {
         String[] stringArray = givenString.split(regex);
