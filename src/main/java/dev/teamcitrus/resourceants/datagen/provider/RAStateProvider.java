@@ -1,9 +1,9 @@
 package dev.teamcitrus.resourceants.datagen.provider;
 
 import dev.teamcitrus.resourceants.ResourceAnts;
-import dev.teamcitrus.resourceants.registry.RABlockRegistry;
+import dev.teamcitrus.resourceants.block.ResourceMushroomBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -14,10 +14,8 @@ public class RAStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        mushroomStateBuilder(RABlockRegistry.COAL_MUSHROOM.get());
-    }
-
-    private void mushroomStateBuilder(Block block) {
-        getVariantBuilder(block).partialState();
+        for (ResourceMushroomBlock block : ResourceMushroomBlock.getAllMushrooms()) {
+            simpleBlock(block, models().getExistingFile(new ResourceLocation(ResourceAnts.MODID, "mushroom")));
+        }
     }
 }

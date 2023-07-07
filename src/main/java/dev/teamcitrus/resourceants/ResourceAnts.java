@@ -19,7 +19,7 @@ public class ResourceAnts {
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(RAItemRegistry.COAL_MUSHROOM_ITEM.get());
+            return new ItemStack(RABlockRegistry.COAL_MUSHROOM.get().asItem());
         }
     };
 
@@ -27,6 +27,7 @@ public class ResourceAnts {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         RABlockRegistry.BLOCKS.register(bus);
+        RABlockRegistry.MUSHROOMS.register(bus);
         RAItemRegistry.ITEMS.register(bus);
 
         bus.addListener(this::commonSetup);

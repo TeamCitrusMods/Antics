@@ -1,6 +1,7 @@
 package dev.teamcitrus.resourceants.item;
 
 import dev.teamcitrus.resourceants.ResourceAnts;
+import dev.teamcitrus.resourceants.registry.RABlockRegistry;
 import dev.teamcitrus.resourceants.registry.RAItemRegistry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -26,6 +27,6 @@ public class ResourceMushroomItem extends BlockItem {
 
     @Override
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-        return itemStack.getItem() == RAItemRegistry.COAL_MUSHROOM_ITEM.get() ? 200 : 0;
+        return itemStack.getItem() == RABlockRegistry.COAL_MUSHROOM.get().asItem() ? 200 : 0;
     }
 }

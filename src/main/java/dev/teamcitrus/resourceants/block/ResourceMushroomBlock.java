@@ -8,20 +8,20 @@ import java.util.List;
 
 public class ResourceMushroomBlock extends Block {
     private static final List<ResourceMushroomBlock> LIST = new ArrayList<>();
-    private final int mainColor;
-    private final int edgingColor;
+    private final int mushroomColor;
+    private final int stemColor;
 
-    public ResourceMushroomBlock(int backgroundColor, int highlightColor) {
+    public ResourceMushroomBlock(int mushroomColor, int stemColor) {
         super(Properties.copy(Blocks.BROWN_MUSHROOM));
 
-        this.mainColor = backgroundColor;
-        this.edgingColor = highlightColor;
+        this.mushroomColor = mushroomColor;
+        this.stemColor = stemColor;
 
         LIST.add(this);
     }
 
     public int getColor(int pTintIndex) {
-        return pTintIndex == 0 ? this.mainColor : this.edgingColor;
+        return pTintIndex == 0 ? this.mushroomColor : this.stemColor;
     }
 
     public static List<ResourceMushroomBlock> getAllMushrooms() {
