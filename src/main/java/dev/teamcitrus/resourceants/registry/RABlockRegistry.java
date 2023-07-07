@@ -2,7 +2,7 @@ package dev.teamcitrus.resourceants.registry;
 
 import dev.teamcitrus.resourceants.ResourceAnts;
 import dev.teamcitrus.resourceants.block.ResourceMushroomBlock;
-import dev.teamcitrus.resourceants.item.ResourceMushroomItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,7 +17,7 @@ public class RABlockRegistry {
 
     private static RegistryObject<Block> registerMushroom(String name, int capColor, int stemColor) {
         RegistryObject<Block> block = BLOCKS.register(name, () -> new ResourceMushroomBlock(capColor, stemColor));
-        MUSHROOMS.register(name, () -> new ResourceMushroomItem(block.get()));
+        MUSHROOMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ResourceAnts.TAB)));
         return block;
     }
 }

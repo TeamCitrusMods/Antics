@@ -1,7 +1,7 @@
 package dev.teamcitrus.resourceants.datagen.provider;
 
 import dev.teamcitrus.resourceants.ResourceAnts;
-import dev.teamcitrus.resourceants.item.ResourceMushroomItem;
+import dev.teamcitrus.resourceants.block.ResourceMushroomBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -23,8 +23,8 @@ public class RAItemProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        for (ResourceMushroomItem item : ResourceMushroomItem.getAllMushrooms()) {
-            mushroomItemBuilder(item);
+        for (ResourceMushroomBlock block : ResourceMushroomBlock.getAllMushrooms()) {
+            mushroomItemBuilder(block.asItem());
         }
     }
 

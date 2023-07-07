@@ -1,7 +1,6 @@
 package dev.teamcitrus.resourceants;
 
 import dev.teamcitrus.resourceants.block.ResourceMushroomBlock;
-import dev.teamcitrus.resourceants.item.ResourceMushroomItem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,8 +21,8 @@ public class ResourceAntsClient {
 
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        for (ResourceMushroomItem item : ResourceMushroomItem.getAllMushrooms()) {
-            event.register((pStack, pTintIndex) -> ((ResourceMushroomBlock)item.getBlock()).getColor(pTintIndex), item);
+        for (ResourceMushroomBlock block : ResourceMushroomBlock.getAllMushrooms()) {
+            event.register((pStack, pTintIndex) -> block.getColor(pTintIndex), block.asItem());
         }
     }
 }
