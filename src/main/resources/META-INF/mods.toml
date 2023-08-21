@@ -1,29 +1,29 @@
 modLoader="javafml"
-loaderVersion="[43,)"
-license="GNU General Public License v3.0"
-issueTrackerURL="https://github.com/TeamCitrusMods/Resource-Ants/issues"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
 
 [[mods]]
-modId="resourceants"
-version="${file.jarVersion}"
-displayName="Resource Ants"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
-logoFile="resourceants.png"
-authors="ZestyBlaze, ElysiaSilly"
-#credits="Thanks for this example mod goes to Java"
-description='''
-'''
+#logoFile="examplemod.png"
+credits="Thanks to p968 for helping us brainstorm ideas"
+authors="${mod_authors}"
 
-[[dependencies.resourceants]]
+description='''${mod_description}'''
+
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
-    versionRange="[43,)"
+    versionRange="${neo_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.resourceants]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,1.20)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
