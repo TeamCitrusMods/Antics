@@ -6,6 +6,7 @@ import dev.teamcitrus.antics.block.RAWoodBlock;
 import dev.teamcitrus.antics.block.ResourceMushroomBlock;
 import dev.teamcitrus.antics.item.ResourceMushroomItem;
 import dev.teamcitrus.antics.util.MushroomResourceTiers;
+import dev.teamcitrus.antics.world.GreatHemlockTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
@@ -13,6 +14,8 @@ import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -34,12 +37,13 @@ public class RABlockRegistry {
     public static final RegistryObject<DoorBlock> GREAT_HEMLOCK_DOOR = registerDoorBlock("great_hemlock_door", BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), GREAT_HEMLOCK);
     public static final RegistryObject<LeavesBlock> GREAT_HEMLOCK_LEAVES = registerLeafBlock("great_hemlock_leaves", BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES));
     public static final RegistryObject<Block> PINECONE_FRAME = registerBlockWithItem("pinecone_frame", BlockBehaviour.Properties.of().noOcclusion().isValidSpawn(RABlockRegistry::never).isRedstoneConductor(RABlockRegistry::never).isSuffocating(RABlockRegistry::never));
+    public static final RegistryObject<SaplingBlock> GREAT_HEMLOCK_SAPLING = registerSapling("great_hemlock_sapling", new GreatHemlockTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING));
 
-    public static final RegistryObject<Block> TIER_ONE_MUSHROOM = registerMushroom("resource_mushroom_tier_one", MushroomResourceTiers.ONE);
-    public static final RegistryObject<Block> TIER_TWO_MUSHROOM = registerMushroom("resource_mushroom_tier_two", MushroomResourceTiers.TWO);
-    public static final RegistryObject<Block> TIER_THREE_MUSHROOM = registerMushroom("resource_mushroom_tier_three", MushroomResourceTiers.THREE);
-    public static final RegistryObject<Block> TIER_FOUR_MUSHROOM = registerMushroom("resource_mushroom_tier_four", MushroomResourceTiers.FOUR);
-    public static final RegistryObject<Block> TIER_FIVE_MUSHROOM = registerMushroom("resource_mushroom_tier_five", MushroomResourceTiers.FIVE);
+    //public static final RegistryObject<Block> TIER_ONE_MUSHROOM = registerMushroom("resource_mushroom_tier_one", MushroomResourceTiers.ONE);
+    //public static final RegistryObject<Block> TIER_TWO_MUSHROOM = registerMushroom("resource_mushroom_tier_two", MushroomResourceTiers.TWO);
+    //public static final RegistryObject<Block> TIER_THREE_MUSHROOM = registerMushroom("resource_mushroom_tier_three", MushroomResourceTiers.THREE);
+    //public static final RegistryObject<Block> TIER_FOUR_MUSHROOM = registerMushroom("resource_mushroom_tier_four", MushroomResourceTiers.FOUR);
+    //public static final RegistryObject<Block> TIER_FIVE_MUSHROOM = registerMushroom("resource_mushroom_tier_five", MushroomResourceTiers.FIVE);
 
     private static RegistryObject<Block> registerBlockWithItem(String name, BlockBehaviour.Properties properties) {
         RegistryObject<Block> block = BLOCKS.register(name, () -> new Block(properties));
@@ -79,6 +83,12 @@ public class RABlockRegistry {
 
     private static RegistryObject<LeavesBlock> registerLeafBlock(String name, BlockBehaviour.Properties properties) {
         RegistryObject<LeavesBlock> block = BLOCKS.register(name, () -> new LeavesBlock(properties));
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
+
+    private static RegistryObject<SaplingBlock> registerSapling(String name, AbstractTreeGrower grower, BlockBehaviour.Properties properties) {
+        RegistryObject<SaplingBlock> block = BLOCKS.register(name, () -> new SaplingBlock(grower, properties));
         ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
         return block;
     }

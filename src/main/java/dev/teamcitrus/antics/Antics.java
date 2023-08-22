@@ -4,7 +4,6 @@ import dev.teamcitrus.antics.config.RAConfig;
 import dev.teamcitrus.antics.registry.RABlockRegistry;
 import dev.teamcitrus.antics.registry.RACreativeModeTabRegistry;
 import dev.teamcitrus.antics.registry.RAItemRegistry;
-import net.minecraft.world.item.AxeItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;

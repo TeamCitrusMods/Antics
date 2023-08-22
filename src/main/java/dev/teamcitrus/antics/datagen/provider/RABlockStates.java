@@ -4,8 +4,10 @@ import dev.teamcitrus.antics.Antics;
 import dev.teamcitrus.antics.registry.RABlockRegistry;
 import dev.teamcitrus.antics.util.RAUtils;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class RABlockStates extends BlockStateProvider {
     public RABlockStates(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -31,5 +33,11 @@ public class RABlockStates extends BlockStateProvider {
         simpleBlockWithItem(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), models().cubeAll("great_hemlock_leaves", RAUtils.id("block/great_hemlock_leaves")).renderType("cutout"));
 
         simpleBlockWithItem(RABlockRegistry.PINECONE_FRAME.get(), models().cubeAll("pinecone_frame", RAUtils.id("block/pinecone_frame")).renderType("cutout"));
+
+        saplingBlock(RABlockRegistry.GREAT_HEMLOCK_SAPLING.get());
+    }
+
+    private void saplingBlock(SaplingBlock block) {
+        simpleBlock(block, models().cross(ForgeRegistries.BLOCKS.getKey(block).getPath(), blockTexture(block)).renderType("cutout"));
     }
 }
