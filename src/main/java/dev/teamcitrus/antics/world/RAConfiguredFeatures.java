@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 
 public class RAConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> GREAT_HEMLOCK_KEY = registerKey("great_hemlock");
@@ -21,7 +21,7 @@ public class RAConfiguredFeatures {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         register(context, GREAT_HEMLOCK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(RABlockRegistry.GREAT_HEMLOCK_LOG.get()),
-                new StraightTrunkPlacer(5, 6, 3),
+                new DarkOakTrunkPlacer(5, 6, 3),
                 BlockStateProvider.simple(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
