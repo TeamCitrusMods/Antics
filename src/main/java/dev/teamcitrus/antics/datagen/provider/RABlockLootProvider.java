@@ -5,6 +5,7 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -21,13 +22,16 @@ public class RABlockLootProvider extends BlockLootSubProvider {
         dropSelf(RABlockRegistry.STRIPPED_GREAT_HEMLOCK_WOOD.get());
         dropSelf(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get());
         dropSelf(RABlockRegistry.GREAT_HEMLOCK_BOARDS.get());
+        dropSelf(RABlockRegistry.GREAT_HEMLOCK_STAIRS.get());
+        add(RABlockRegistry.GREAT_HEMLOCK_SLAB.get(), createSlabItemTable(RABlockRegistry.GREAT_HEMLOCK_SLAB.get()));
         add(RABlockRegistry.GREAT_HEMLOCK_DOOR.get(), createDoorTable(RABlockRegistry.GREAT_HEMLOCK_DOOR.get()));
-        this.add(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), (block) -> createLeavesDrops(block, RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), createLeavesDrops(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), RABlockRegistry.GREAT_HEMLOCK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(RABlockRegistry.PINECONE_FRAME.get());
         dropSelf(RABlockRegistry.GREAT_HEMLOCK_SAPLING.get());
     }
 
     @Override
+    @NotNull
     protected Iterable<Block> getKnownBlocks() {
         return RABlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }

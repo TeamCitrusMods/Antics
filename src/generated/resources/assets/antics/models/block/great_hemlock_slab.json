@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "antics:block/great_hemlock_planks",
+    "side": "antics:block/great_hemlock_planks",
+    "top": "antics:block/great_hemlock_planks"
+  }
+}

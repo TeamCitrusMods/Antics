@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "antics:block/great_hemlock_slab"
+    },
+    "type=double": {
+      "model": "antics:block/great_hemlock_planks"
+    },
+    "type=top": {
+      "model": "antics:block/great_hemlock_slab_top"
+    }
+  }
+}

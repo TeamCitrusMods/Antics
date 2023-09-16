@@ -15,7 +15,7 @@ public class RACreativeModeTabRegistry {
 
     public static final RegistryObject<CreativeModeTab> TAB_RESOURCE_ANTS = CREATIVE_TABS.register("antics", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.antics"))
-            .icon(() -> new ItemStack(Blocks.DIRT))
+            .icon(() -> new ItemStack(RABlockRegistry.GREAT_HEMLOCK_WOOD.get()))
             .displayItems((pParameters, pOutput) -> {
                 for (RegistryObject<Item> item : RABlockRegistry.ITEMS.getEntries()) {
                     pOutput.accept(item.get());

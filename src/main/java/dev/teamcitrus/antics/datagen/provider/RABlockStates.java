@@ -28,6 +28,12 @@ public class RABlockStates extends BlockStateProvider {
 
         simpleBlockWithItem(RABlockRegistry.GREAT_HEMLOCK_BOARDS.get(), cubeAll(RABlockRegistry.GREAT_HEMLOCK_BOARDS.get()));
 
+        stairsBlock(RABlockRegistry.GREAT_HEMLOCK_STAIRS.get(), blockTexture(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+        simpleBlockItem(RABlockRegistry.GREAT_HEMLOCK_STAIRS.get(), models().withExistingParent("block/great_hemlock_stairs", "block/stairs"));
+
+        slabBlock(RABlockRegistry.GREAT_HEMLOCK_SLAB.get(), blockTexture(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get()), blockTexture(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+        simpleBlockItem(RABlockRegistry.GREAT_HEMLOCK_SLAB.get(), models().withExistingParent("block/great_hemlock_slab", "block/slab"));
+
         doorBlockWithRenderType(RABlockRegistry.GREAT_HEMLOCK_DOOR.get(), RAUtils.id("block/great_hemlock_door_bottom"), RAUtils.id("block/great_hemlock_door_top"), "cutout");
 
         simpleBlockWithItem(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), models().cubeAll("great_hemlock_leaves", RAUtils.id("block/great_hemlock_leaves")).renderType("cutout"));
