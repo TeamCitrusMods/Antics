@@ -1,2 +1,20 @@
-// 1.20.1	2023-08-22T14:34:36.0222129	Tags for minecraft:block mod id antics
+// 1.20.1	2023-09-16T18:02:11.7092546	Tags for minecraft:block mod id antics
+4860281ea4e66dbd8d6e1a80173cce70e58197f5 data/minecraft/tags/blocks/buttons.json
+586d3f5269068d5f9e690110e077534db0c9e3fc data/minecraft/tags/blocks/completes_find_tree_tutorial.json
+67bb0705d0250e6a9620d7bba9f0c5d110992b79 data/minecraft/tags/blocks/doors.json
+b3686b617bad2a83862a98acd2190de6d7d84ca1 data/minecraft/tags/blocks/fences.json
+03bcf246c537d11b1d7055a48ac8aaa9a5cdbf7f data/minecraft/tags/blocks/fence_gates.json
+a4fdde3efed7293c0e629b47d3a3296687f5473c data/minecraft/tags/blocks/leaves.json
 db3a0fb10987beb1fcb868ba58399ee381c6b7c9 data/minecraft/tags/blocks/logs.json
+db3a0fb10987beb1fcb868ba58399ee381c6b7c9 data/minecraft/tags/blocks/logs_that_burn.json
+6071052a43448e315e0bb892bac2f6694b291d03 data/minecraft/tags/blocks/mineable/axe.json
+a4fdde3efed7293c0e629b47d3a3296687f5473c data/minecraft/tags/blocks/mineable/hoe.json
+86e675ea97b67d337e40fdb485a7c2e57d3a9d36 data/minecraft/tags/blocks/planks.json
+4f80da5bf47744d032590851c2ea5b7f67a84c95 data/minecraft/tags/blocks/pressure_plates.json
+5407f72e4e157184ed5330672bd4b119034f6bad data/minecraft/tags/blocks/slabs.json
+0461c29ba464fb2fcf269826c65093924730860b data/minecraft/tags/blocks/stairs.json
+4860281ea4e66dbd8d6e1a80173cce70e58197f5 data/minecraft/tags/blocks/wooden_buttons.json
+67bb0705d0250e6a9620d7bba9f0c5d110992b79 data/minecraft/tags/blocks/wooden_doors.json
+b3686b617bad2a83862a98acd2190de6d7d84ca1 data/minecraft/tags/blocks/wooden_fences.json
+4f80da5bf47744d032590851c2ea5b7f67a84c95 data/minecraft/tags/blocks/wooden_pressure_plates.json
+5407f72e4e157184ed5330672bd4b119034f6bad data/minecraft/tags/blocks/wooden_slabs.json

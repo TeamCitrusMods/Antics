@@ -1,10 +1,7 @@
 package dev.teamcitrus.antics.datagen;
 
 import dev.teamcitrus.antics.Antics;
-import dev.teamcitrus.antics.datagen.provider.RABlockLoot;
-import dev.teamcitrus.antics.datagen.provider.RABlockStates;
-import dev.teamcitrus.antics.datagen.provider.RATagProvider;
-import dev.teamcitrus.antics.datagen.provider.RAWorldgenProvider;
+import dev.teamcitrus.antics.datagen.provider.*;
 import dev.teamcitrus.antics.datagen.provider.lang.EnUsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -27,8 +24,9 @@ public class RADatagen {
 
         gen.addProvider(event.includeClient(), new EnUsProvider(packOutput));
         gen.addProvider(event.includeServer(), new RABlockStates(packOutput, file));
+        gen.addProvider(event.includeServer(), new RAItemModelProvider(packOutput, file));
         gen.addProvider(event.includeServer(), RABlockLoot.create(packOutput));
-        gen.addProvider(event.includeServer(), new RATagProvider(packOutput, complete, file));
+        gen.addProvider(event.includeServer(), new RATagProvider.Blocks(packOutput, complete, file));
         gen.addProvider(event.includeServer(), new RAWorldgenProvider(packOutput, complete));
     }
 }

@@ -24,7 +24,11 @@ public class RABlockLootProvider extends BlockLootSubProvider {
         dropSelf(RABlockRegistry.GREAT_HEMLOCK_BOARDS.get());
         dropSelf(RABlockRegistry.GREAT_HEMLOCK_STAIRS.get());
         add(RABlockRegistry.GREAT_HEMLOCK_SLAB.get(), createSlabItemTable(RABlockRegistry.GREAT_HEMLOCK_SLAB.get()));
+        dropSelf(RABlockRegistry.GREAT_HEMLOCK_FENCE.get());
+        dropSelf(RABlockRegistry.GREAT_HEMLOCK_FENCE_GATE.get());
         add(RABlockRegistry.GREAT_HEMLOCK_DOOR.get(), createDoorTable(RABlockRegistry.GREAT_HEMLOCK_DOOR.get()));
+        dropSelf(RABlockRegistry.GREAT_HEMLOCK_PRESSURE_PLATE.get());
+        dropSelf(RABlockRegistry.GREAT_HEMLOCK_BUTTON.get());
         add(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), createLeavesDrops(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), RABlockRegistry.GREAT_HEMLOCK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(RABlockRegistry.PINECONE_FRAME.get());
         dropSelf(RABlockRegistry.GREAT_HEMLOCK_SAPLING.get());
