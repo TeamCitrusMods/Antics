@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "antics:block/pinecone_block_top",
+    "side": "antics:block/pinecone_block"
+  }
+}

@@ -59,10 +59,12 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
     minecraft "net.neoforged:forge:${minecraft_version}-${neo_version}"
+    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${project.minecraft_version}-${project.terrablender_version}")
 }
 
 tasks.withType(ProcessResources).configureEach {

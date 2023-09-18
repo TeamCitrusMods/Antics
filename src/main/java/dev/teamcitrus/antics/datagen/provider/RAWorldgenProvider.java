@@ -12,7 +12,10 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class RAWorldgenProvider extends DatapackBuiltinEntriesProvider {
-    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(Registries.CONFIGURED_FEATURE, RAConfiguredFeatures::bootstrap);
+    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+            .add(Registries.CONFIGURED_FEATURE, RAConfiguredFeatures::bootstrap)
+            //.add(Registries.BIOME, RABiomes::boostrap)
+            ;
 
     public RAWorldgenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(Antics.MODID));

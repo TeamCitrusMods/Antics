@@ -1,5 +1,6 @@
-package dev.teamcitrus.antics.world;
+package dev.teamcitrus.antics.world.tree;
 
+import dev.teamcitrus.antics.world.RAConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;

@@ -1,4 +1,5 @@
-// 1.20.1	2023-09-16T15:37:14.7994628	Loot Tables
+// 1.20.1	2023-09-17T00:26:20.9964982	Loot Tables
+b562839313282dfcb46d67b00e1adb821c2a2f7c data/antics/loot_tables/blocks/empty_pinecone_block.json
 614df7319133712dfef893e819974087afa10cd3 data/antics/loot_tables/blocks/great_hemlock_boards.json
 e5829a44e57369bc5fee5b239cfedef3815848bd data/antics/loot_tables/blocks/great_hemlock_button.json
 0432fb80b64c55a47b53f48fe004019bdfff6413 data/antics/loot_tables/blocks/great_hemlock_door.json
@@ -12,6 +13,8 @@ d0b80d6c6ca69929e75251dc68ae1cc4a2c1ac0c data/antics/loot_tables/blocks/great_he
 74956fbb1ec31983d1785d4a46e3069d09144522 data/antics/loot_tables/blocks/great_hemlock_slab.json
 f8d2d6331941f4f0582f971b59127be7cd978a0f data/antics/loot_tables/blocks/great_hemlock_stairs.json
 b6e0156c6aa4396396a152eaee1ee09eed196dfc data/antics/loot_tables/blocks/great_hemlock_wood.json
+87999df43f1f06753251c111c78978fc0026e1fb data/antics/loot_tables/blocks/pinecone_block.json
 4af13a1a495ae139a785ca7ccb213e42c63761be data/antics/loot_tables/blocks/pinecone_frame.json
+e04a9a3a5358d9bb0ea885c6b9f338e30cedb0e0 data/antics/loot_tables/blocks/polished_pinecone_block.json
 228a62ed81a26a908cc0f7fbf9ddebb940ee228a data/antics/loot_tables/blocks/stripped_great_hemlock_log.json
 1e74c3bf357a46bedcd3fbbdea25c3ac713d0767 data/antics/loot_tables/blocks/stripped_great_hemlock_wood.json

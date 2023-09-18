@@ -1,9 +1,11 @@
 package dev.teamcitrus.antics.datagen.provider.lang;
 
 import dev.teamcitrus.antics.Antics;
-import dev.teamcitrus.antics.registry.RABlockRegistry;
+import dev.teamcitrus.antics.registry.BlockRegistry;
+import dev.teamcitrus.antics.registry.ItemRegistry;
 import dev.teamcitrus.antics.util.MushroomResourceTiers;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
@@ -18,7 +20,8 @@ public class EnUsProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        Set<RegistryObject<Block>> blocks = new HashSet<>(RABlockRegistry.BLOCKS.getEntries());
+        Set<RegistryObject<Block>> blocks = new HashSet<>(BlockRegistry.BLOCKS.getEntries());
+        Set<RegistryObject<Item>> items = new HashSet<>(ItemRegistry.ITEMS.getEntries());
 
         add("itemGroup.antics", "Antics");
         add("tooltip.antics.tier", "Tier: %s");
@@ -29,10 +32,18 @@ public class EnUsProvider extends LanguageProvider {
             add(b.get().getDescriptionId(), name);
         });
 
+        items.forEach(i -> {
+            String name = i.get().getDescriptionId().replaceFirst("item\\.antics\\.", "");
+            name = makeProper(toTitleCase(name, "_"));
+            add(i.get().getDescriptionId(), name);
+        });
+
+        /*
         for (MushroomResourceTiers tier : MushroomResourceTiers.values()) {
             add(tier.getLangKey(), tier.getNameStr());
             add(tier.getNumKey(), tier.getNameInt());
         }
+         */
     }
 
     /**
@@ -58,7 +69,8 @@ public class EnUsProvider extends LanguageProvider {
                 .replaceAll(" Tier Two", "")
                 .replaceAll(" Tier Three", "")
                 .replaceAll(" Tier Four", "")
-                .replaceAll(" Tier Five", "");
+                .replaceAll(" Tier Five", "")
+        ;
         return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 }

@@ -25,7 +25,7 @@ public class RADatagen {
         gen.addProvider(event.includeClient(), new EnUsProvider(packOutput));
         gen.addProvider(event.includeServer(), new RABlockStates(packOutput, file));
         gen.addProvider(event.includeServer(), new RAItemModelProvider(packOutput, file));
-        gen.addProvider(event.includeServer(), RABlockLoot.create(packOutput));
+        gen.addProvider(event.includeServer(), RALootProvider.create(packOutput));
         gen.addProvider(event.includeServer(), new RATagProvider.Blocks(packOutput, complete, file));
         gen.addProvider(event.includeServer(), new RAWorldgenProvider(packOutput, complete));
     }

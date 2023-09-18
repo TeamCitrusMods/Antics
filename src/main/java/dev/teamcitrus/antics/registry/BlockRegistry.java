@@ -3,7 +3,7 @@ package dev.teamcitrus.antics.registry;
 import dev.teamcitrus.antics.Antics;
 import dev.teamcitrus.antics.block.RAPillarWoodBlock;
 import dev.teamcitrus.antics.block.RAWoodBlock;
-import dev.teamcitrus.antics.world.GreatHemlockTreeGrower;
+import dev.teamcitrus.antics.world.tree.GreatHemlockTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
@@ -20,7 +20,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class RABlockRegistry {
+public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Antics.MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Antics.MODID);
     public static final BlockSetType GREAT_HEMLOCK = BlockSetType.register(new BlockSetType("great_hemlock"));
@@ -41,8 +41,12 @@ public class RABlockRegistry {
     public static final RegistryObject<PressurePlateBlock> GREAT_HEMLOCK_PRESSURE_PLATE = register("great_hemlock_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), GREAT_HEMLOCK));
     public static final RegistryObject<ButtonBlock> GREAT_HEMLOCK_BUTTON = register("great_hemlock_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), GREAT_HEMLOCK, 30, true));
     public static final RegistryObject<Block> GREAT_HEMLOCK_LEAVES = register("great_hemlock_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
-    public static final RegistryObject<Block> PINECONE_FRAME = register("pinecone_frame", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().isValidSpawn(RABlockRegistry::never).isRedstoneConductor(RABlockRegistry::never).isSuffocating(RABlockRegistry::never)));
+    public static final RegistryObject<Block> PINECONE_FRAME = register("pinecone_frame", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().isValidSpawn(BlockRegistry::never).isRedstoneConductor(BlockRegistry::never).isSuffocating(BlockRegistry::never)));
     public static final RegistryObject<SaplingBlock> GREAT_HEMLOCK_SAPLING = register("great_hemlock_sapling", () -> new SaplingBlock(new GreatHemlockTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<RotatedPillarBlock> PINECONE_BLOCK = register("pinecone_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+    public static final RegistryObject<RotatedPillarBlock> EMPTY_PINECONE_BLOCK = register("empty_pinecone_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+    public static final RegistryObject<Block> POLISHED_PINECONE_BLOCK = register("polished_pinecone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, block);
