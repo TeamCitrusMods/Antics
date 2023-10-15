@@ -1,15 +1,13 @@
 package dev.teamcitrus.antics;
 
-import dev.teamcitrus.antics.config.RAConfig;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import dev.teamcitrus.antics.registry.CreativeModeTabRegistry;
 import dev.teamcitrus.antics.registry.ItemRegistry;
+import dev.teamcitrus.antics.world.AnticsTreeDecoratorType;
 import dev.teamcitrus.antics.world.regions.AnticsRegion;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import terrablender.api.Regions;
@@ -20,14 +18,13 @@ public class Antics {
 
     public Antics() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, RAConfig.CLIENT_SPEC);
         bus.addListener(this::commonSetup);
 
         BlockRegistry.BLOCKS.register(bus);
         BlockRegistry.ITEMS.register(bus);
         ItemRegistry.ITEMS.register(bus);
         CreativeModeTabRegistry.CREATIVE_TABS.register(bus);
-
+        AnticsTreeDecoratorType.TREE_DECORATOR_TYPE.register(bus);
     }
 
     public static ResourceLocation id(String name) {

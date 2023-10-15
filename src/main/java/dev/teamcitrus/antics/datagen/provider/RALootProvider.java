@@ -36,14 +36,17 @@ public class RALootProvider {
             dropSelf(BlockRegistry.GREAT_HEMLOCK_FENCE.get());
             dropSelf(BlockRegistry.GREAT_HEMLOCK_FENCE_GATE.get());
             add(BlockRegistry.GREAT_HEMLOCK_DOOR.get(), createDoorTable(BlockRegistry.GREAT_HEMLOCK_DOOR.get()));
+            dropSelf(BlockRegistry.GREAT_HEMLOCK_TRAPDOOR.get());
             dropSelf(BlockRegistry.GREAT_HEMLOCK_PRESSURE_PLATE.get());
             dropSelf(BlockRegistry.GREAT_HEMLOCK_BUTTON.get());
             add(BlockRegistry.GREAT_HEMLOCK_LEAVES.get(), createLeavesDrops(BlockRegistry.GREAT_HEMLOCK_LEAVES.get(), BlockRegistry.GREAT_HEMLOCK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-            dropSelf(BlockRegistry.PINECONE_FRAME.get());
             dropSelf(BlockRegistry.GREAT_HEMLOCK_SAPLING.get());
             dropSelf(BlockRegistry.PINECONE_BLOCK.get());
             dropSelf(BlockRegistry.EMPTY_PINECONE_BLOCK.get());
             dropSelf(BlockRegistry.POLISHED_PINECONE_BLOCK.get());
+            dropSelf(BlockRegistry.POLISHED_PINECONE_TILE.get());
+            dropSelf(BlockRegistry.PINECONE_FRAME.get());
+            dropSelf(BlockRegistry.BRANCH.get());
         }
 
         @Override

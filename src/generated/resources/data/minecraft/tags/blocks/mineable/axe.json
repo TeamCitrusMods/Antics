@@ -8,10 +8,11 @@
     "antics:great_hemlock_boards",
     "antics:great_hemlock_stairs",
     "antics:great_hemlock_slab",
+    "antics:great_hemlock_fence",
+    "antics:great_hemlock_fence_gate",
     "antics:great_hemlock_door",
-    "antics:great_hemlock_button",
-    "antics:great_hemlock_fence_gate",
-    "antics:great_hemlock_fence_gate",
-    "antics:great_hemlock_pressure_plate"
+    "antics:great_hemlock_trapdoor",
+    "antics:great_hemlock_pressure_plate",
+    "antics:great_hemlock_button"
   ]
 }

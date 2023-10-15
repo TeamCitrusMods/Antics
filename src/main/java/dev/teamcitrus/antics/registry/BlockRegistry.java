@@ -1,6 +1,8 @@
 package dev.teamcitrus.antics.registry;
 
 import dev.teamcitrus.antics.Antics;
+import dev.teamcitrus.antics.block.BranchBlock;
+import dev.teamcitrus.antics.block.PineconeBlock;
 import dev.teamcitrus.antics.block.RAPillarWoodBlock;
 import dev.teamcitrus.antics.block.RAWoodBlock;
 import dev.teamcitrus.antics.world.tree.GreatHemlockTreeGrower;
@@ -37,16 +39,19 @@ public class BlockRegistry {
     public static final RegistryObject<FenceBlock> GREAT_HEMLOCK_FENCE = register("great_hemlock_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
     public static final RegistryObject<FenceGateBlock> GREAT_HEMLOCK_FENCE_GATE = register("great_hemlock_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), GREAT_HEMLOCK_WOOD_TYPE));
     public static final RegistryObject<DoorBlock> GREAT_HEMLOCK_DOOR = register("great_hemlock_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), GREAT_HEMLOCK));
-    //TRAPDOOR GOES HERE
+    public static final RegistryObject<TrapDoorBlock> GREAT_HEMLOCK_TRAPDOOR = register("great_hemlock_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), GREAT_HEMLOCK));
     public static final RegistryObject<PressurePlateBlock> GREAT_HEMLOCK_PRESSURE_PLATE = register("great_hemlock_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), GREAT_HEMLOCK));
     public static final RegistryObject<ButtonBlock> GREAT_HEMLOCK_BUTTON = register("great_hemlock_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), GREAT_HEMLOCK, 30, true));
     public static final RegistryObject<Block> GREAT_HEMLOCK_LEAVES = register("great_hemlock_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
-    public static final RegistryObject<Block> PINECONE_FRAME = register("pinecone_frame", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().isValidSpawn(BlockRegistry::never).isRedstoneConductor(BlockRegistry::never).isSuffocating(BlockRegistry::never)));
-    public static final RegistryObject<SaplingBlock> GREAT_HEMLOCK_SAPLING = register("great_hemlock_sapling", () -> new SaplingBlock(new GreatHemlockTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> GREAT_HEMLOCK_SAPLING = register("great_hemlock_sapling", () -> new SaplingBlock(new GreatHemlockTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
-    public static final RegistryObject<RotatedPillarBlock> PINECONE_BLOCK = register("pinecone_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
-    public static final RegistryObject<RotatedPillarBlock> EMPTY_PINECONE_BLOCK = register("empty_pinecone_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
-    public static final RegistryObject<Block> POLISHED_PINECONE_BLOCK = register("polished_pinecone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+    public static final RegistryObject<Block> PINECONE_BLOCK = register("pinecone_block", () -> new PineconeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> EMPTY_PINECONE_BLOCK = register("empty_pinecone_block", () -> new PineconeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> POLISHED_PINECONE_BLOCK = register("polished_pinecone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
+    public static final RegistryObject<Block> POLISHED_PINECONE_TILE = register("polished_pinecone_tile", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
+    public static final RegistryObject<RotatedPillarBlock> PINECONE_FRAME = register("pinecone_frame", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().noOcclusion().isValidSpawn(BlockRegistry::never).isRedstoneConductor(BlockRegistry::never).isSuffocating(BlockRegistry::never)));
+
+    public static final RegistryObject<Block> BRANCH = register("branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES)));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, block);

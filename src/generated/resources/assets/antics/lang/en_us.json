@@ -1,5 +1,6 @@
 {
-  "block.antics.empty_pinecone_block": "Empty Pinecone Block",
+  "block.antics.branch": "Branch",
+  "block.antics.empty_pinecone_block": "Empty Pinecone",
   "block.antics.great_hemlock_boards": "Great Hemlock Boards",
   "block.antics.great_hemlock_button": "Great Hemlock Button",
   "block.antics.great_hemlock_door": "Great Hemlock Door",
@@ -12,13 +13,13 @@
   "block.antics.great_hemlock_sapling": "Great Hemlock Sapling",
   "block.antics.great_hemlock_slab": "Great Hemlock Slab",
   "block.antics.great_hemlock_stairs": "Great Hemlock Stairs",
+  "block.antics.great_hemlock_trapdoor": "Great Hemlock Trapdoor",
   "block.antics.great_hemlock_wood": "Great Hemlock Wood",
-  "block.antics.pinecone_block": "Pinecone Block",
+  "block.antics.pinecone_block": "Pinecone",
   "block.antics.pinecone_frame": "Pinecone Frame",
-  "block.antics.polished_pinecone_block": "Polished Pinecone Block",
+  "block.antics.polished_pinecone_block": "Polished Pinecone",
+  "block.antics.polished_pinecone_tile": "Polished Pinecone Tile",
   "block.antics.stripped_great_hemlock_log": "Stripped Great Hemlock Log",
   "block.antics.stripped_great_hemlock_wood": "Stripped Great Hemlock Wood",
-  "item.antics.pinecone": "Pinecone",
-  "itemGroup.antics": "Antics",
-  "tooltip.antics.tier": "Tier: %s"
+  "itemGroup.antics": "Antics"
 }

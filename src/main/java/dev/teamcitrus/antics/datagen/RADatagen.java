@@ -21,12 +21,14 @@ public class RADatagen {
         ExistingFileHelper file = event.getExistingFileHelper();
         PackOutput packOutput = gen.getPackOutput();
         CompletableFuture<HolderLookup.Provider> complete = event.getLookupProvider();
+        RATagProvider.Blocks blockTags = new RATagProvider.Blocks(packOutput, complete, file);
 
         gen.addProvider(event.includeClient(), new EnUsProvider(packOutput));
         gen.addProvider(event.includeServer(), new RABlockStates(packOutput, file));
         gen.addProvider(event.includeServer(), new RAItemModelProvider(packOutput, file));
         gen.addProvider(event.includeServer(), RALootProvider.create(packOutput));
-        gen.addProvider(event.includeServer(), new RATagProvider.Blocks(packOutput, complete, file));
+        gen.addProvider(event.includeServer(), blockTags);
+        gen.addProvider(event.includeServer(), new RATagProvider.Items(packOutput, complete, blockTags.contentsGetter(), file));
         gen.addProvider(event.includeServer(), new RAWorldgenProvider(packOutput, complete));
     }
 }

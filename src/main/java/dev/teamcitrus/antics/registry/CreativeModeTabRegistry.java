@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class CreativeModeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Antics.MODID);
 
-    public static final RegistryObject<CreativeModeTab> TAB_RESOURCE_ANTS = CREATIVE_TABS.register("antics", () -> CreativeModeTab.builder()
+    private static final RegistryObject<CreativeModeTab> TAB_RESOURCE_ANTS = CREATIVE_TABS.register("antics", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.antics"))
             .icon(() -> new ItemStack(BlockRegistry.GREAT_HEMLOCK_WOOD.get()))
             .displayItems((pParameters, pOutput) -> {

@@ -3,7 +3,6 @@ package dev.teamcitrus.antics.datagen.provider.lang;
 import dev.teamcitrus.antics.Antics;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import dev.teamcitrus.antics.registry.ItemRegistry;
-import dev.teamcitrus.antics.util.MushroomResourceTiers;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -24,7 +23,6 @@ public class EnUsProvider extends LanguageProvider {
         Set<RegistryObject<Item>> items = new HashSet<>(ItemRegistry.ITEMS.getEntries());
 
         add("itemGroup.antics", "Antics");
-        add("tooltip.antics.tier", "Tier: %s");
 
         blocks.forEach(b -> {
             String name = b.get().getDescriptionId().replaceFirst("block\\.antics\\.", "");
@@ -37,13 +35,6 @@ public class EnUsProvider extends LanguageProvider {
             name = makeProper(toTitleCase(name, "_"));
             add(i.get().getDescriptionId(), name);
         });
-
-        /*
-        for (MushroomResourceTiers tier : MushroomResourceTiers.values()) {
-            add(tier.getLangKey(), tier.getNameStr());
-            add(tier.getNumKey(), tier.getNameInt());
-        }
-         */
     }
 
     /**
@@ -65,11 +56,7 @@ public class EnUsProvider extends LanguageProvider {
      */
     private String makeProper(String s) {
         s = s
-                .replaceAll(" Tier One", "")
-                .replaceAll(" Tier Two", "")
-                .replaceAll(" Tier Three", "")
-                .replaceAll(" Tier Four", "")
-                .replaceAll(" Tier Five", "")
+                .replaceAll(" Block", "")
         ;
         return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
