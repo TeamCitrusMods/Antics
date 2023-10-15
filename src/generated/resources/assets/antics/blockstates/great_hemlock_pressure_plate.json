@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "antics:block/great_hemlock_pressure_plate"
+    },
+    "powered=true": {
+      "model": "antics:block/great_hemlock_pressure_plate_down"
+    }
+  }
+}

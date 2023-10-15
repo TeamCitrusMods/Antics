@@ -1,15 +1,15 @@
 modLoader="javafml"
 loaderVersion="${loader_version_range}"
 license="${mod_license}"
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+issueTrackerURL="https://github.com/TeamCitrusMods/Resource-Ants/issues"
 
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+displayURL="https://github.com/TeamCitrusMods/Resource-Ants"
 #logoFile="examplemod.png"
-credits="Thanks to p968 for helping us brainstorm ideas"
+credits="Thanks to p968 for helping us brainstorm ideas and test!"
 authors="${mod_authors}"
 
 description='''${mod_description}'''

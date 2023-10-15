@@ -1,10 +1,8 @@
 package dev.teamcitrus.antics.datagen.provider;
 
 import dev.teamcitrus.antics.Antics;
-import dev.teamcitrus.antics.registry.RABlockRegistry;
-import dev.teamcitrus.antics.util.RAUtils;
+import dev.teamcitrus.antics.registry.BlockRegistry;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,34 +14,52 @@ public class RABlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        logBlock(RABlockRegistry.GREAT_HEMLOCK_LOG.get());
-        simpleBlockItem(RABlockRegistry.GREAT_HEMLOCK_LOG.get(), models().withExistingParent("block/great_hemlock_log", "block/cube_column"));
-        simpleBlockWithItem(RABlockRegistry.GREAT_HEMLOCK_WOOD.get(), models().cubeAll("great_hemlock_wood", RAUtils.id("block/great_hemlock_log")));
+        logBlock(BlockRegistry.GREAT_HEMLOCK_LOG.get());
+        simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_LOG.get(), models().withExistingParent("great_hemlock_log", "cube_column"));
 
-        logBlock(RABlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get());
-        simpleBlockItem(RABlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get(), models().withExistingParent("block/stripped_great_hemlock_log", "block/cube_column"));
-        simpleBlockWithItem(RABlockRegistry.STRIPPED_GREAT_HEMLOCK_WOOD.get(), models().cubeAll("stripped_great_hemlock_wood", RAUtils.id("block/stripped_great_hemlock_log")));
+        simpleBlockWithItem(BlockRegistry.GREAT_HEMLOCK_WOOD.get(), models().cubeAll("great_hemlock_wood", modLoc("block/great_hemlock_log")));
 
-        simpleBlockWithItem(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get(), cubeAll(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+        logBlock(BlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get());
+        simpleBlockItem(BlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get(), models().withExistingParent("stripped_great_hemlock_log", "cube_column"));
 
-        simpleBlockWithItem(RABlockRegistry.GREAT_HEMLOCK_BOARDS.get(), cubeAll(RABlockRegistry.GREAT_HEMLOCK_BOARDS.get()));
+        simpleBlockWithItem(BlockRegistry.STRIPPED_GREAT_HEMLOCK_WOOD.get(), models().cubeAll("stripped_great_hemlock_wood", modLoc("block/stripped_great_hemlock_log")));
 
-        stairsBlock(RABlockRegistry.GREAT_HEMLOCK_STAIRS.get(), blockTexture(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
-        simpleBlockItem(RABlockRegistry.GREAT_HEMLOCK_STAIRS.get(), models().withExistingParent("block/great_hemlock_stairs", "block/stairs"));
+        simpleBlockWithItem(BlockRegistry.GREAT_HEMLOCK_PLANKS.get(), cubeAll(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
 
-        slabBlock(RABlockRegistry.GREAT_HEMLOCK_SLAB.get(), blockTexture(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get()), blockTexture(RABlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
-        simpleBlockItem(RABlockRegistry.GREAT_HEMLOCK_SLAB.get(), models().withExistingParent("block/great_hemlock_slab", "block/slab"));
+        simpleBlockWithItem(BlockRegistry.GREAT_HEMLOCK_BOARDS.get(), cubeAll(BlockRegistry.GREAT_HEMLOCK_BOARDS.get()));
 
-        doorBlockWithRenderType(RABlockRegistry.GREAT_HEMLOCK_DOOR.get(), RAUtils.id("block/great_hemlock_door_bottom"), RAUtils.id("block/great_hemlock_door_top"), "cutout");
+        stairsBlock(BlockRegistry.GREAT_HEMLOCK_STAIRS.get(), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+        simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_STAIRS.get(), models().withExistingParent("great_hemlock_stairs", "stairs"));
 
-        simpleBlockWithItem(RABlockRegistry.GREAT_HEMLOCK_LEAVES.get(), models().cubeAll("great_hemlock_leaves", RAUtils.id("block/great_hemlock_leaves")).renderType("cutout"));
+        slabBlock(BlockRegistry.GREAT_HEMLOCK_SLAB.get(), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+        simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_SLAB.get(), models().withExistingParent("great_hemlock_slab", "slab"));
 
-        simpleBlockWithItem(RABlockRegistry.PINECONE_FRAME.get(), models().cubeAll("pinecone_frame", RAUtils.id("block/pinecone_frame")).renderType("cutout"));
+        fenceBlock(BlockRegistry.GREAT_HEMLOCK_FENCE.get(), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
 
-        saplingBlock(RABlockRegistry.GREAT_HEMLOCK_SAPLING.get());
-    }
+        fenceGateBlock(BlockRegistry.GREAT_HEMLOCK_FENCE_GATE.get(), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+        simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_FENCE_GATE.get(), models().withExistingParent("great_hemlock_fence_gate", "template_fence_gate"));
 
-    private void saplingBlock(SaplingBlock block) {
-        simpleBlock(block, models().cross(ForgeRegistries.BLOCKS.getKey(block).getPath(), blockTexture(block)).renderType("cutout"));
+        doorBlockWithRenderType(BlockRegistry.GREAT_HEMLOCK_DOOR.get(), modLoc("block/great_hemlock_door_bottom"), modLoc("block/great_hemlock_door_top"), "cutout");
+
+        trapdoorBlockWithRenderType(BlockRegistry.GREAT_HEMLOCK_TRAPDOOR.get(), modLoc("block/great_hemlock_trapdoor"), true, "cutout");
+        simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_TRAPDOOR.get(), models().withExistingParent("great_hemlock_trapdoor_bottom", "template_orientable_trapdoor_bottom"));
+
+        pressurePlateBlock(BlockRegistry.GREAT_HEMLOCK_PRESSURE_PLATE.get(), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+        simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_PRESSURE_PLATE.get(), models().withExistingParent("great_hemlock_pressure_plate", "pressure_plate_up"));
+
+        buttonBlock(BlockRegistry.GREAT_HEMLOCK_BUTTON.get(), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
+
+        simpleBlockWithItem(BlockRegistry.GREAT_HEMLOCK_LEAVES.get(), models().withExistingParent("great_hemlock_leaves", "leaves").texture("all", modLoc("block/great_hemlock_leaves")).renderType("cutout"));
+
+        simpleBlock(BlockRegistry.GREAT_HEMLOCK_SAPLING.get(), models().cross(ForgeRegistries.BLOCKS.getKey(BlockRegistry.GREAT_HEMLOCK_SAPLING.get()).getPath(), blockTexture(BlockRegistry.GREAT_HEMLOCK_SAPLING.get())).renderType("cutout"));
+
+        simpleBlockWithItem(BlockRegistry.POLISHED_PINECONE_BLOCK.get(), models().cubeAll("polished_pinecone_block", modLoc("block/polished_pinecone_block")));
+
+        simpleBlockWithItem(BlockRegistry.POLISHED_PINECONE_TILE.get(), models().cubeAll("polished_pinecone_tile", modLoc("block/polished_pinecone_tile")));
+
+        axisBlockWithRenderType(BlockRegistry.PINECONE_FRAME.get(), modLoc("block/pinecone_frame"), modLoc("block/pinecone_frame_top"), "cutout");
+        simpleBlockItem(BlockRegistry.PINECONE_FRAME.get(), models().withExistingParent("pinecone_frame", "cube_column"));
+
+        simpleBlock(BlockRegistry.BRANCH.get(), models().cross(ForgeRegistries.BLOCKS.getKey(BlockRegistry.BRANCH.get()).getPath(), blockTexture(BlockRegistry.BRANCH.get())).renderType("cutout"));
     }
 }

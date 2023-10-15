@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "antics:block/great_hemlock_planks"
+  }
+}

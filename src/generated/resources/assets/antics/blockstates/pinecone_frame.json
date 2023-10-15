@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "antics:block/pinecone_frame_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "antics:block/pinecone_frame"
+    },
+    "axis=z": {
+      "model": "antics:block/pinecone_frame_horizontal",
+      "x": 90
     }
   }
 }
