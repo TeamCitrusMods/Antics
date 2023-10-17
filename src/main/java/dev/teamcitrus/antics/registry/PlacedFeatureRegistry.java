@@ -27,7 +27,12 @@ public class PlacedFeatureRegistry {
 
         Holder<ConfiguredFeature<?, ?>> GREAT_HEMLOCK_TREE = getter.getOrThrow(AnticsConfiguredFeatures.GREAT_HEMLOCK_KEY);
 
-        register(context, GREAT_HEMLOCK_TREE_CHECKED, GREAT_HEMLOCK_TREE, List.of(PlacementUtils.HEIGHTMAP, PlacementUtils.filteredByBlockSurvival(BlockRegistry.GREAT_HEMLOCK_SAPLING.get()), RarityFilter.onAverageOnceEvery(20)));
+        register(context, GREAT_HEMLOCK_TREE_CHECKED,
+                GREAT_HEMLOCK_TREE,
+                List.of(PlacementUtils.HEIGHTMAP,
+                        PlacementUtils.filteredByBlockSurvival(BlockRegistry.GREAT_HEMLOCK_SAPLING.get()),
+                        RarityFilter.onAverageOnceEvery(20))
+        );
     }
 
     public static ResourceKey<PlacedFeature> createKey(String pName) {
