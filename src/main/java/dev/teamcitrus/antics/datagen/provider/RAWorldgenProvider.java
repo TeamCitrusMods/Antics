@@ -1,6 +1,7 @@
 package dev.teamcitrus.antics.datagen.provider;
 
 import dev.teamcitrus.antics.Antics;
+import dev.teamcitrus.antics.registry.PlacedFeatureRegistry;
 import dev.teamcitrus.antics.world.AnticsConfiguredFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -15,6 +16,7 @@ public class RAWorldgenProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, AnticsConfiguredFeatures::bootstrap)
             //.add(Registries.BIOME, RABiomes::boostrap)
+            .add(Registries.PLACED_FEATURE, PlacedFeatureRegistry::bootstrap)
             ;
 
     public RAWorldgenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

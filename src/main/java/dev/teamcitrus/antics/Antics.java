@@ -3,6 +3,7 @@ package dev.teamcitrus.antics;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import dev.teamcitrus.antics.registry.CreativeModeTabRegistry;
 import dev.teamcitrus.antics.registry.ItemRegistry;
+import dev.teamcitrus.antics.registry.PlacedFeatureRegistry;
 import dev.teamcitrus.antics.world.AnticsTreeDecoratorType;
 import dev.teamcitrus.antics.world.regions.AnticsRegion;
 import net.minecraft.resources.ResourceLocation;
@@ -24,6 +25,7 @@ public class Antics {
         BlockRegistry.ITEMS.register(bus);
         ItemRegistry.ITEMS.register(bus);
         CreativeModeTabRegistry.CREATIVE_TABS.register(bus);
+        PlacedFeatureRegistry.PLACED_FEATURE.register(bus);
         AnticsTreeDecoratorType.TREE_DECORATOR_TYPE.register(bus);
     }
 
@@ -33,7 +35,7 @@ public class Antics {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            Regions.register(new AnticsRegion(id("overworld"), 2));
+            Regions.register(new AnticsRegion(id("overworld"), 5));
         });
     }
 }

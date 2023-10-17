@@ -27,9 +27,9 @@ public class AnticsRegion extends Region {
                 .temperature(ParameterUtils.Temperature.NEUTRAL)
                 .humidity(ParameterUtils.Humidity.NEUTRAL)
                 .continentalness(ParameterUtils.Continentalness.FAR_INLAND)
-                .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
+                .erosion(ParameterUtils.Erosion.EROSION_0)
                 .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
-                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .weirdness(ParameterUtils.Weirdness.LOW_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, BiomeRegistry.GREAT_HEMLOCK_FOREST));
 
         builder.build().forEach(mapper::accept);
