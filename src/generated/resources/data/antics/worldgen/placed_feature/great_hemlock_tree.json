@@ -2,6 +2,13 @@
   "feature": "antics:great_hemlock",
   "placement": [
     {
+      "type": "minecraft:count",
+      "count": 7
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
       "type": "minecraft:heightmap",
       "heightmap": "MOTION_BLOCKING"
     },
@@ -18,8 +25,7 @@
       }
     },
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 20
+      "type": "minecraft:biome"
     }
   ]
 }

@@ -1,3 +1,10 @@
-// 1.20.1	2023-10-17T13:57:38.1833599	Registries
-d4c7806c555487f4cd6546d35c193464f6a07f28 data/antics/worldgen/configured_feature/great_hemlock.json
-a3feb5a67b7b1b2b373eb860b580703f308d5356 data/antics/worldgen/placed_feature/great_hemlock_tree.json
+// 1.20.1	2023-10-18T15:35:40.3011497	Registries
+30cd5b68740cfa0c3f52ccbdcdb60a99d18dbac7 data/antics/worldgen/biome/great_hemlock_forest.json
+7a6f447c403cecfe502c71e535f00f5d609e601f data/antics/worldgen/configured_feature/great_hemlock.json
+3eafcb769dec5ab72abd720c6229c1119d62d8ad data/antics/worldgen/configured_feature/hemlock_flower.json
+10a09af5934b2fe23d066055e80f504d4e824429 data/antics/worldgen/configured_feature/hemlock_rock.json
+218cb6cb739fdbea706ebeced9e21d504823eb93 data/antics/worldgen/configured_feature/water_basin.json
+cafb488ba7b848b18f2dd527d381819f5bdbf2e8 data/antics/worldgen/placed_feature/great_hemlock_tree.json
+9574d13e5c82fa472c51e2fd2285eeb152629bef data/antics/worldgen/placed_feature/hemlock_flower.json
+ae04b694d364192e16ccd510da832bc36bc0b764 data/antics/worldgen/placed_feature/hemlock_rock.json
+63de1b246212b41c788c24d4be69b584de732322 data/antics/worldgen/placed_feature/water_basin.json

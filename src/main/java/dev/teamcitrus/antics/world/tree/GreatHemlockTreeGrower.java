@@ -1,6 +1,6 @@
 package dev.teamcitrus.antics.world.tree;
 
-import dev.teamcitrus.antics.world.AnticsConfiguredFeatures;
+import dev.teamcitrus.antics.registry.ConfiguredFeaturesRegistry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;
@@ -17,6 +17,6 @@ public class GreatHemlockTreeGrower extends AbstractMegaTreeGrower {
     @Nullable
     @Override
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource pRandom) {
-        return AnticsConfiguredFeatures.GREAT_HEMLOCK_KEY;
+        return ConfiguredFeaturesRegistry.GREAT_HEMLOCK_KEY;
     }
 }

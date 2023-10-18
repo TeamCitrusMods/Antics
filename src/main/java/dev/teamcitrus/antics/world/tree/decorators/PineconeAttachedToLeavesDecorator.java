@@ -12,7 +12,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLeavesDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
-import org.apache.logging.log4j.LogManager;
 
 import java.util.HashSet;
 import java.util.List;

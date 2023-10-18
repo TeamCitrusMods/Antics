@@ -24,8 +24,8 @@ public class AnticsRegion extends Region {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
         new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.NEUTRAL)
-                .humidity(ParameterUtils.Humidity.NEUTRAL)
+                .temperature(ParameterUtils.Temperature.WARM)
+                .humidity(ParameterUtils.Humidity.DRY)
                 .continentalness(ParameterUtils.Continentalness.FAR_INLAND)
                 .erosion(ParameterUtils.Erosion.EROSION_0)
                 .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)

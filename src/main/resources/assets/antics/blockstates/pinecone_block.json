@@ -1,7 +1,30 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "antics:block/pinecone_block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "antics:block/pinecone_block",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "antics:block/pinecone_block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "antics:block/pinecone_block",
+      "x": 90,
+      "y": 270
+    },
+    "facing=up": {
       "model": "antics:block/pinecone_block"
+    },
+    "facing=down": {
+      "model": "antics:block/pinecone_block",
+      "x": 180
     }
   }
 }
