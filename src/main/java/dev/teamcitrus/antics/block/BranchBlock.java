@@ -3,7 +3,10 @@ package dev.teamcitrus.antics.block;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -23,6 +26,13 @@ public class BranchBlock extends Block {
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
+    }
+
+    @Override
+    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+        if(!pLevel.isClientSide() && pEntity instanceof Arrow arrow) {
+            pLevel.destroyBlock(pPos, true, arrow);
+        }
     }
 
     @Override

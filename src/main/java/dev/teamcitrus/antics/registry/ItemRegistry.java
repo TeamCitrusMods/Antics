@@ -11,6 +11,8 @@ import java.util.function.Supplier;
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Antics.MODID);
 
+    public static final RegistryObject<Item> ANT_CHITIN = register("ant_chitin", () -> new Item(new Item.Properties()));
+
     public static RegistryObject<Item> register(String name, Supplier<Item> supplier) {
         return ITEMS.register(name, supplier);
     }

@@ -3,23 +3,23 @@ package dev.teamcitrus.antics;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import dev.teamcitrus.antics.registry.CreativeModeTabRegistry;
 import dev.teamcitrus.antics.registry.ItemRegistry;
-import dev.teamcitrus.antics.registry.PlacedFeatureRegistry;
 import dev.teamcitrus.antics.world.AnticsTreeDecoratorType;
 import dev.teamcitrus.antics.world.regions.AnticsRegion;
 import dev.teamcitrus.antics.world.surfacerule.AnticsSurfaceRuleData;
-import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 
 @Mod(Antics.MODID)
 public class Antics {
     public static final String MODID = "antics";
+    public static final Logger LOGGER = LogManager.getLogger(MODID);
 
     public Antics() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

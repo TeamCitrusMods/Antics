@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "antics:ornate_ant_chitin"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "antics:blocks/ornate_ant_chitin"
+}

@@ -23,6 +23,7 @@ public class EnUsProvider extends LanguageProvider {
         Set<RegistryObject<Item>> items = new HashSet<>(ItemRegistry.ITEMS.getEntries());
 
         add("itemGroup.antics", "Antics");
+        add("death.attack.falling_pinecone", "%s was killed by a falling pinecone");
 
         blocks.forEach(b -> {
             String name = b.get().getDescriptionId().replaceFirst("block\\.antics\\.", "");
@@ -56,7 +57,7 @@ public class EnUsProvider extends LanguageProvider {
      */
     private String makeProper(String s) {
         s = s
-                .replaceAll(" Block", "")
+                .replaceAll("Pinecone Block", "Pinecone")
         ;
         return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }

@@ -47,6 +47,12 @@ public class RALootProvider {
             dropSelf(BlockRegistry.POLISHED_PINECONE_TILE.get());
             dropSelf(BlockRegistry.PINECONE_FRAME.get());
             dropSelf(BlockRegistry.BRANCH.get());
+            dropSelf(BlockRegistry.ANT_CHITIN_BLOCK.get());
+            dropSelf(BlockRegistry.ORNATE_ANT_CHITIN.get());
+            dropSelf(BlockRegistry.ANT_CHITIN_TILES.get());
+            dropSelf(BlockRegistry.ANTSILK_COCOON.get());
+            dropSelf(BlockRegistry.QUILTED_ANTSILK.get());
+            dropSelf(BlockRegistry.SPUN_ANTSILK.get());
         }
 
         @Override

@@ -7,8 +7,8 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class RABlockStates extends BlockStateProvider {
-    public RABlockStates(PackOutput output, ExistingFileHelper exFileHelper) {
+public class RABlockStatesProvider extends BlockStateProvider {
+    public RABlockStatesProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Antics.MODID, exFileHelper);
     }
 
@@ -61,5 +61,20 @@ public class RABlockStates extends BlockStateProvider {
         simpleBlockItem(BlockRegistry.PINECONE_FRAME.get(), models().withExistingParent("pinecone_frame", "cube_column"));
 
         simpleBlock(BlockRegistry.BRANCH.get(), models().cross(ForgeRegistries.BLOCKS.getKey(BlockRegistry.BRANCH.get()).getPath(), blockTexture(BlockRegistry.BRANCH.get())).renderType("cutout"));
+
+        logBlock(BlockRegistry.ANT_CHITIN_BLOCK.get());
+        simpleBlockItem(BlockRegistry.ANT_CHITIN_BLOCK.get(), models().withExistingParent("ant_chitin_block", "cube_column"));
+
+        simpleBlockWithItem(BlockRegistry.ORNATE_ANT_CHITIN.get(), models().cubeAll("ornate_ant_chitin", modLoc("block/ornate_ant_chitin")));
+
+        simpleBlockWithItem(BlockRegistry.ANT_CHITIN_TILES.get(), models().cubeAll("ant_chitin_tiles", modLoc("block/ant_chitin_tiles")));
+
+        logBlock(BlockRegistry.ANTSILK_COCOON.get());
+        simpleBlockItem(BlockRegistry.ANTSILK_COCOON.get(), models().withExistingParent("antsilk_cocoon", "cube_column"));
+
+        logBlock(BlockRegistry.SPUN_ANTSILK.get());
+        simpleBlockItem(BlockRegistry.SPUN_ANTSILK.get(), models().withExistingParent("spun_antsilk", "cube_column"));
+
+        simpleBlockWithItem(BlockRegistry.QUILTED_ANTSILK.get(), models().cubeAll("quilted_antsilk", modLoc("block/quilted_antsilk")));
     }
 }

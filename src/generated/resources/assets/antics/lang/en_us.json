@@ -1,4 +1,7 @@
 {
+  "block.antics.ant_chitin_block": "Ant Chitin Block",
+  "block.antics.ant_chitin_tiles": "Ant Chitin Tiles",
+  "block.antics.antsilk_cocoon": "Antsilk Cocoon",
   "block.antics.branch": "Branch",
   "block.antics.empty_pinecone_block": "Empty Pinecone",
   "block.antics.great_hemlock_boards": "Great Hemlock Boards",
@@ -15,11 +18,16 @@
   "block.antics.great_hemlock_stairs": "Great Hemlock Stairs",
   "block.antics.great_hemlock_trapdoor": "Great Hemlock Trapdoor",
   "block.antics.great_hemlock_wood": "Great Hemlock Wood",
+  "block.antics.ornate_ant_chitin": "Ornate Ant Chitin",
   "block.antics.pinecone_block": "Pinecone",
   "block.antics.pinecone_frame": "Pinecone Frame",
   "block.antics.polished_pinecone_block": "Polished Pinecone",
   "block.antics.polished_pinecone_tile": "Polished Pinecone Tile",
+  "block.antics.quilted_antsilk": "Quilted Antsilk",
+  "block.antics.spun_antsilk": "Spun Antsilk",
   "block.antics.stripped_great_hemlock_log": "Stripped Great Hemlock Log",
   "block.antics.stripped_great_hemlock_wood": "Stripped Great Hemlock Wood",
+  "death.attack.falling_pinecone": "%s was killed by a falling pinecone",
+  "item.antics.ant_chitin": "Ant Chitin",
   "itemGroup.antics": "Antics"
 }

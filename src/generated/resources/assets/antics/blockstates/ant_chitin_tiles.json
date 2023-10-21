@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "antics:block/ant_chitin_tiles"
+    }
+  }
+}

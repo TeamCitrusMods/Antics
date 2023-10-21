@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "antics:block/spun_antsilk_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "antics:block/spun_antsilk"
+    },
+    "axis=z": {
+      "model": "antics:block/spun_antsilk_horizontal",
+      "x": 90
+    }
+  }
+}

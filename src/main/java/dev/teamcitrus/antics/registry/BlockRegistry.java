@@ -53,6 +53,14 @@ public class BlockRegistry {
 
     public static final RegistryObject<Block> BRANCH = register("branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES)));
 
+    public static final RegistryObject<RotatedPillarBlock> ANT_CHITIN_BLOCK = register("ant_chitin_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_BASALT)));
+    public static final RegistryObject<Block> ORNATE_ANT_CHITIN = register("ornate_ant_chitin", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_BASALT)));
+    public static final RegistryObject<Block> ANT_CHITIN_TILES = register("ant_chitin_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_BASALT)));
+
+    public static final RegistryObject<RotatedPillarBlock> ANTSILK_COCOON = register("antsilk_cocoon", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+    public static final RegistryObject<RotatedPillarBlock> SPUN_ANTSILK = register("spun_antsilk", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+    public static final RegistryObject<Block> QUILTED_ANTSILK = register("quilted_antsilk", () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, block);
         ITEMS.register(name, () -> new BlockItem(blockRegistryObject.get(), new Item.Properties()));

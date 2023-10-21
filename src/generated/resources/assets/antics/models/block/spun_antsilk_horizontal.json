@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "antics:block/spun_antsilk_top",
+    "side": "antics:block/spun_antsilk"
+  }
+}
