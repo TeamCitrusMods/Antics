@@ -1,8 +1,9 @@
 package dev.teamcitrus.antics.registry;
 
 import dev.teamcitrus.antics.Antics;
-import dev.teamcitrus.antics.block.sign.RAStandingSignBlock;
-import dev.teamcitrus.antics.block.sign.RAWallSignBlock;
+import dev.teamcitrus.antics.block.sign.RAHangingSign;
+import dev.teamcitrus.antics.block.sign.RASign;
+import dev.teamcitrus.antics.entity.RAHangingSignBlockEntity;
 import dev.teamcitrus.antics.entity.RASignBlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -16,7 +17,8 @@ import java.util.Arrays;
 
 public class BlockEntityRegistry {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Antics.MODID);
-    public static final RegistryObject<BlockEntityType<RASignBlockEntity>> RA_SIGN_BLOCK = BLOCK_ENTITY_TYPES.register("sign", () -> BlockEntityType.Builder.of(RASignBlockEntity::new, getBlocks(RAStandingSignBlock.class, RAWallSignBlock.class)).build(null));
+    public static final RegistryObject<BlockEntityType<RASignBlockEntity>> RA_SIGN_BLOCK = BLOCK_ENTITY_TYPES.register("sign", () -> BlockEntityType.Builder.of(RASignBlockEntity::new, getBlocks(RASign.RAStandingSignBlock.class, RASign.RAWallSignBlock.class)).build(null));
+    public static final RegistryObject<BlockEntityType<RAHangingSignBlockEntity>> RA_HANGING_SIGN_BLOCK = BLOCK_ENTITY_TYPES.register("hanging_sign", () -> BlockEntityType.Builder.of(RAHangingSignBlockEntity::new, getBlocks(RAHangingSign.CustomCeilingHangingSignBlock.class, RAHangingSign.CustomWallHangingSignBlock.class)).build(null));
 
     public static Block[] getBlocks(Class<?>... blockClasses) {
         IForgeRegistry<Block> blocks = ForgeRegistries.BLOCKS;

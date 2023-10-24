@@ -3,6 +3,7 @@ package dev.teamcitrus.antics;
 import dev.teamcitrus.antics.registry.BlockEntityRegistry;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraftforge.api.distmarker.Dist;
@@ -10,9 +11,17 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = Antics.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class AnticsClient {
+    @SubscribeEvent
+    public static void registerClient(FMLClientSetupEvent event) {
+        event.enqueueWork(() ->
+                Sheets.addWoodType(BlockRegistry.GREAT_HEMLOCK_WOOD_TYPE)
+        );
+    }
+
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null

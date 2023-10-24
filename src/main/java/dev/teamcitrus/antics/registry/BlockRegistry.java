@@ -2,13 +2,14 @@ package dev.teamcitrus.antics.registry;
 
 import dev.teamcitrus.antics.Antics;
 import dev.teamcitrus.antics.block.*;
-import dev.teamcitrus.antics.block.sign.RAStandingSignBlock;
-import dev.teamcitrus.antics.block.sign.RAWallSignBlock;
+import dev.teamcitrus.antics.block.sign.RAHangingSign;
+import dev.teamcitrus.antics.block.sign.RASign;
 import dev.teamcitrus.antics.world.tree.GreatHemlockTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -44,11 +45,11 @@ public class BlockRegistry {
     public static final RegistryObject<Block> GREAT_HEMLOCK_LEAVES = register("great_hemlock_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> GREAT_HEMLOCK_SAPLING = register("great_hemlock_sapling", () -> new SaplingBlock(new GreatHemlockTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     // Sign
-    public static final RegistryObject<StandingSignBlock> GREAT_HEMLOCK_SIGN = register("great_hemlock_sign", () -> new RAStandingSignBlock(BlockBehaviour.Properties.copy(GREAT_HEMLOCK_PLANKS.get()).noCollission().strength(1.0f), GREAT_HEMLOCK_WOOD_TYPE));
-    public static final RegistryObject<WallSignBlock> GREAT_HEMLOCK_WALL_SIGN = register("great_hemlock_wall_sign", () -> new RAWallSignBlock(BlockBehaviour.Properties.copy(GREAT_HEMLOCK_PLANKS.get()).noCollission().strength(1.0f), GREAT_HEMLOCK_WOOD_TYPE));
+    public static final RegistryObject<StandingSignBlock> GREAT_HEMLOCK_SIGN = registerStandingSign("great_hemlock_sign", () -> new RASign.RAStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
+    public static final RegistryObject<WallSignBlock> GREAT_HEMLOCK_WALL_SIGN = registerWallSign("great_hemlock_wall_sign", () -> new RASign.RAWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
     // Hanging Sign
-    //public static final RegistryObject<CeilingHangingSignBlock> GREAT_HEMLOCK_HANGING_SIGN = register("great_hemlock_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
-    //public static final RegistryObject<WallHangingSignBlock> GREAT_HEMLOCK_WALL_HANGING_SIGN = register("great_hemlock_sign", () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
+    //public static final RegistryObject<CeilingHangingSignBlock> GREAT_HEMLOCK_HANGING_SIGN = register("great_hemlock_hanging_sign", () -> new RAHangingSign.CustomCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
+    //public static final RegistryObject<WallHangingSignBlock> GREAT_HEMLOCK_WALL_HANGING_SIGN = register("great_hemlock_wall_hanging_sign", () -> new RAHangingSign.CustomWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
     // Boat
     // Chest Boat
 
@@ -72,6 +73,16 @@ public class BlockRegistry {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, block);
         ITEMS.register(name, () -> new BlockItem(blockRegistryObject.get(), new Item.Properties()));
         return blockRegistryObject;
+    }
+
+    private static <T extends StandingSignBlock> RegistryObject<T> registerStandingSign(String name, Supplier<T> block) {
+        RegistryObject<T> blockRegistryObject = BLOCKS.register(name, block);
+        ITEMS.register(name, () -> new SignItem(new Item.Properties(), GREAT_HEMLOCK_SIGN.get(), GREAT_HEMLOCK_WALL_SIGN.get()));
+        return blockRegistryObject;
+    }
+
+    private static <T extends WallSignBlock> RegistryObject<T> registerWallSign(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
     private static Boolean never(BlockState p_50779_, BlockGetter p_50780_, BlockPos p_50781_, EntityType<?> p_50782_) {

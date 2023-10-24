@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-24T14:13:24.553439	Loot Tables
+// 1.20.1	2023-10-24T15:53:54.3750623	Loot Tables
 5f6482880d524a08497fa368b497d3673d37f7eb data/antics/loot_tables/blocks/antsilk_cocoon.json
 76189598092992cb655bb0bba5dc3bc0487a3c02 data/antics/loot_tables/blocks/ant_chitin_block.json
 ff57bc94af7b3f4db859dea1025a24781388bc39 data/antics/loot_tables/blocks/ant_chitin_tiles.json
@@ -18,7 +18,7 @@ d6598861ee462ddcab2b0b981686a554d9407233 data/antics/loot_tables/blocks/great_he
 74956fbb1ec31983d1785d4a46e3069d09144522 data/antics/loot_tables/blocks/great_hemlock_slab.json
 f8d2d6331941f4f0582f971b59127be7cd978a0f data/antics/loot_tables/blocks/great_hemlock_stairs.json
 cf246e0fe02dbfc8cf7f817d6c6f94cbd7fc391f data/antics/loot_tables/blocks/great_hemlock_trapdoor.json
-f5d4e6e1b72d44fb75659219843772fb518f875c data/antics/loot_tables/blocks/great_hemlock_wall_sign.json
+f5d7767238194aaf015cf21e35cd19ee90edfc94 data/antics/loot_tables/blocks/great_hemlock_wall_sign.json
 b6e0156c6aa4396396a152eaee1ee09eed196dfc data/antics/loot_tables/blocks/great_hemlock_wood.json
 c2d39d5c2a593c9d28ed5737b576e6b73f5540c3 data/antics/loot_tables/blocks/ornate_ant_chitin.json
 87999df43f1f06753251c111c78978fc0026e1fb data/antics/loot_tables/blocks/pinecone_block.json

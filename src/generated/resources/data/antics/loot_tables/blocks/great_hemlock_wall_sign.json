@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "antics:great_hemlock_wall_sign"
+          "name": "antics:great_hemlock_sign"
         }
       ],
       "rolls": 1.0

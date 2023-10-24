@@ -24,6 +24,7 @@ public class RAItemModelProvider extends ItemModelProvider {
         basicItem(BlockRegistry.GREAT_HEMLOCK_DOOR.get().asItem());
         basicItem(BlockRegistry.GREAT_HEMLOCK_TRAPDOOR.get().asItem());
         controlledTextureBasicItem(BlockRegistry.GREAT_HEMLOCK_SAPLING.get().asItem(), "block");
+        basicItem(BlockRegistry.GREAT_HEMLOCK_SIGN.get().asItem());
         basicItem(BlockRegistry.PINECONE_BLOCK.get().asItem());
         basicItem(BlockRegistry.EMPTY_PINECONE_BLOCK.get().asItem());
         basicItem(BlockRegistry.BRANCH.get().asItem());
