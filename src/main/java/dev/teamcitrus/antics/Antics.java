@@ -1,5 +1,6 @@
 package dev.teamcitrus.antics;
 
+import dev.teamcitrus.antics.registry.BlockEntityRegistry;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import dev.teamcitrus.antics.registry.CreativeModeTabRegistry;
 import dev.teamcitrus.antics.registry.ItemRegistry;
@@ -28,6 +29,7 @@ public class Antics {
         BlockRegistry.BLOCKS.register(bus);
         BlockRegistry.ITEMS.register(bus);
         ItemRegistry.ITEMS.register(bus);
+        BlockEntityRegistry.BLOCK_ENTITY_TYPES.register(bus);
         CreativeModeTabRegistry.CREATIVE_TABS.register(bus);
         AnticsTreeDecoratorType.TREE_DECORATOR_TYPE.register(bus);
     }

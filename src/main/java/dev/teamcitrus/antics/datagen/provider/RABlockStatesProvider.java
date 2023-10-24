@@ -42,7 +42,6 @@ public class RABlockStatesProvider extends BlockStateProvider {
         doorBlockWithRenderType(BlockRegistry.GREAT_HEMLOCK_DOOR.get(), modLoc("block/great_hemlock_door_bottom"), modLoc("block/great_hemlock_door_top"), "cutout");
 
         trapdoorBlockWithRenderType(BlockRegistry.GREAT_HEMLOCK_TRAPDOOR.get(), modLoc("block/great_hemlock_trapdoor"), true, "cutout");
-        simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_TRAPDOOR.get(), models().withExistingParent("great_hemlock_trapdoor_bottom", "template_orientable_trapdoor_bottom"));
 
         pressurePlateBlock(BlockRegistry.GREAT_HEMLOCK_PRESSURE_PLATE.get(), blockTexture(BlockRegistry.GREAT_HEMLOCK_PLANKS.get()));
         simpleBlockItem(BlockRegistry.GREAT_HEMLOCK_PRESSURE_PLATE.get(), models().withExistingParent("great_hemlock_pressure_plate", "pressure_plate_up"));
@@ -52,6 +51,8 @@ public class RABlockStatesProvider extends BlockStateProvider {
         simpleBlockWithItem(BlockRegistry.GREAT_HEMLOCK_LEAVES.get(), models().withExistingParent("great_hemlock_leaves", "leaves").texture("all", modLoc("block/great_hemlock_leaves")).renderType("cutout"));
 
         simpleBlock(BlockRegistry.GREAT_HEMLOCK_SAPLING.get(), models().cross(ForgeRegistries.BLOCKS.getKey(BlockRegistry.GREAT_HEMLOCK_SAPLING.get()).getPath(), blockTexture(BlockRegistry.GREAT_HEMLOCK_SAPLING.get())).renderType("cutout"));
+
+        signBlock(BlockRegistry.GREAT_HEMLOCK_SIGN.get(), BlockRegistry.GREAT_HEMLOCK_WALL_SIGN.get(), modLoc("entity/signs/great_hemlock"));
 
         simpleBlockWithItem(BlockRegistry.POLISHED_PINECONE_BLOCK.get(), models().cubeAll("polished_pinecone_block", modLoc("block/polished_pinecone_block")));
 

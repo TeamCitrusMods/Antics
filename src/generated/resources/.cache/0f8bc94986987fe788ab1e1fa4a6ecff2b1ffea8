@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-20T18:42:27.9015486	Block States: antics
+// 1.20.1	2023-10-24T14:13:24.555426	Block States: antics
 4332f6d799907170685d5ffde0740f569bb70473 assets/antics/blockstates/antsilk_cocoon.json
 a359dd13fe224369c4b2d3dd28e45f7ff81d7a3d assets/antics/blockstates/ant_chitin_block.json
 77b015371e27f2b8d3df9311aed86e3e15f178b0 assets/antics/blockstates/ant_chitin_tiles.json
@@ -13,9 +13,11 @@ d9413365a82450e4595dd42b7877ab441cc56cc0 assets/antics/blockstates/great_hemlock
 152ae60255befbb9c30a595d92f19556fa998a70 assets/antics/blockstates/great_hemlock_planks.json
 73c2269e4bab39711b3f9a3912f6a87bfc439fc1 assets/antics/blockstates/great_hemlock_pressure_plate.json
 ccd4cb13f210f0514eab8eba65005373cfd57c74 assets/antics/blockstates/great_hemlock_sapling.json
+28bf3f13cbfd4dd97a97854e0d0db695b6aadcef assets/antics/blockstates/great_hemlock_sign.json
 f4f2b29f821d84ccc6bbc856e71d560c9858d625 assets/antics/blockstates/great_hemlock_slab.json
 fd601781a9b611b5fcc5ff94f1a7db6603ceb82b assets/antics/blockstates/great_hemlock_stairs.json
 42a9ea4692b495c35388c78463c387ab62c660f7 assets/antics/blockstates/great_hemlock_trapdoor.json
+28bf3f13cbfd4dd97a97854e0d0db695b6aadcef assets/antics/blockstates/great_hemlock_wall_sign.json
 cc552d703c5a5179321c46866852fd195e819307 assets/antics/blockstates/great_hemlock_wood.json
 194494a0c4dc9b5f03abfd8dc14216c4ea598c10 assets/antics/blockstates/ornate_ant_chitin.json
 4e020d5257210b2754bb8b484b705d2ba10bdcd3 assets/antics/blockstates/pinecone_frame.json
@@ -55,6 +57,7 @@ ec2264f7766549b47076261729f96546fd335dc3 assets/antics/models/block/great_hemloc
 76b65cf3dffaf8251d6782ab097ddc9d42340734 assets/antics/models/block/great_hemlock_pressure_plate.json
 aeeebd622b7aef15229feb93d92a23f26bc8d4b7 assets/antics/models/block/great_hemlock_pressure_plate_down.json
 a66f9c2fa02d588b341bcf4e4cc4383b10a05ce5 assets/antics/models/block/great_hemlock_sapling.json
+ceca68b53f3ccfd034c1b6ea0a7caa0f64d6a34c assets/antics/models/block/great_hemlock_sign.json
 462b5a5cd8f8ed820502de85509db56b95caa60d assets/antics/models/block/great_hemlock_slab.json
 1661a98b8a2333cc3423ee4d699736cbf6e52099 assets/antics/models/block/great_hemlock_slab_top.json
 2c9ecd5c03c32f3df3c70b66159fced11bc37a6f assets/antics/models/block/great_hemlock_stairs.json
@@ -86,7 +89,6 @@ fdfd6691e5ad6a7b257506646f6e7aa2ef431f4c assets/antics/models/item/great_hemlock
 f708c93f08129540b9d89ecff7c49ed1896bb1e4 assets/antics/models/item/great_hemlock_pressure_plate.json
 4bf079614a13ff0b75000221ac740eac9cb29cb4 assets/antics/models/item/great_hemlock_slab.json
 2b5fe075056b55cd86ec0b07fc1dbeef9758d97b assets/antics/models/item/great_hemlock_stairs.json
-d84021da3b0bbefc773f0da10be52d6c51f1d1d0 assets/antics/models/item/great_hemlock_trapdoor.json
 a966e7713ae45fc907dd50a3999522e6e1373841 assets/antics/models/item/great_hemlock_wood.json
 2252132ef42e522ad2ce1c2a1ae4347470310c97 assets/antics/models/item/ornate_ant_chitin.json
 7224ce26ae182990a105dddb137ce46fc7adac0c assets/antics/models/item/pinecone_frame.json

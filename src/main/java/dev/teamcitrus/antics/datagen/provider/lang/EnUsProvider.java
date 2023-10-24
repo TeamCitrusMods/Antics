@@ -6,11 +6,12 @@ import dev.teamcitrus.antics.registry.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class EnUsProvider extends LanguageProvider {
     public EnUsProvider(PackOutput output) {
@@ -21,6 +22,8 @@ public class EnUsProvider extends LanguageProvider {
     protected void addTranslations() {
         Set<RegistryObject<Block>> blocks = new HashSet<>(BlockRegistry.BLOCKS.getEntries());
         Set<RegistryObject<Item>> items = new HashSet<>(ItemRegistry.ITEMS.getEntries());
+
+        takeAll(blocks, i -> i.get() instanceof WallSignBlock);
 
         add("itemGroup.antics", "Antics");
         add("death.attack.falling_pinecone", "%s was killed by a falling pinecone");
@@ -60,5 +63,26 @@ public class EnUsProvider extends LanguageProvider {
                 .replaceAll("Pinecone Block", "Pinecone")
         ;
         return Character.toUpperCase(s.charAt(0)) + s.substring(1);
+    }
+
+    /**
+     * removes all entry from a collection based off of a predicate and returns all items removed in a new collection
+     */
+    public static <T> Collection<T> takeAll(Collection<T> src, Predicate<T> pred) {
+        List<T> ret = new ArrayList<>();
+
+        Iterator<T> iter = src.iterator();
+        while (iter.hasNext()) {
+            T item = iter.next();
+            if (pred.test(item)) {
+                iter.remove();
+                ret.add(item);
+            }
+        }
+
+        if (ret.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return ret;
     }
 }
