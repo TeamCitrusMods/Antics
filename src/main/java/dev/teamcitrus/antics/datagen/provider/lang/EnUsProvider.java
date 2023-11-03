@@ -6,6 +6,7 @@ import dev.teamcitrus.antics.registry.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
@@ -24,6 +25,7 @@ public class EnUsProvider extends LanguageProvider {
         Set<RegistryObject<Item>> items = new HashSet<>(ItemRegistry.ITEMS.getEntries());
 
         takeAll(blocks, i -> i.get() instanceof WallSignBlock);
+        takeAll(blocks, i -> i.get() instanceof WallHangingSignBlock);
 
         add("itemGroup.antics", "Antics");
         add("death.attack.falling_pinecone", "%s was killed by a falling pinecone");

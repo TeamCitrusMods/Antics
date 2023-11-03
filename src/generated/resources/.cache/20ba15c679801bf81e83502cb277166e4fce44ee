@@ -1,10 +1,11 @@
-// 1.20.1	2023-10-24T15:59:12.1000643	Item Models: antics
+// 1.20.1	2023-10-24T16:53:19.9979433	Item Models: antics
 67fdafc0728197afb8381cfbe3ee4374d0d67e54 assets/antics/models/item/ant_chitin.json
 999e3750dcada549398d2ec8074f6950bf0c10e7 assets/antics/models/item/branch.json
 14e828a12bf26cd59313cde96e7c388dea1e0154 assets/antics/models/item/empty_pinecone_block.json
 3a672af68662bc1bb2eeaae86dddc0aea9e1f4b9 assets/antics/models/item/great_hemlock_button.json
 31cb30a0cad3732fd93e1d98c27a44151c6bace7 assets/antics/models/item/great_hemlock_door.json
 da5401dc417902ecd5cb30a6c640712063b6d434 assets/antics/models/item/great_hemlock_fence.json
+043005b07e4465980da87e57801b92aa79a91611 assets/antics/models/item/great_hemlock_hanging_sign.json
 8eb6612e01451436984cbb833df739262b10c241 assets/antics/models/item/great_hemlock_sapling.json
 4a15ba8363c56edd8365654cb3b9bdf986caed47 assets/antics/models/item/great_hemlock_sign.json
 e67b3c709c136dd7b34727f8f29953527df06521 assets/antics/models/item/great_hemlock_trapdoor.json

@@ -1,9 +1,12 @@
 package dev.teamcitrus.antics;
 
+import dev.teamcitrus.antics.client.render.AntRenderer;
 import dev.teamcitrus.antics.registry.BlockEntityRegistry;
 import dev.teamcitrus.antics.registry.BlockRegistry;
+import dev.teamcitrus.antics.registry.EntityRegistry;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,9 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class AnticsClient {
     @SubscribeEvent
     public static void registerClient(FMLClientSetupEvent event) {
-        event.enqueueWork(() ->
-                Sheets.addWoodType(BlockRegistry.GREAT_HEMLOCK_WOOD_TYPE)
-        );
+        event.enqueueWork(() -> Sheets.addWoodType(BlockRegistry.GREAT_HEMLOCK_WOOD_TYPE));
     }
 
     @SubscribeEvent
@@ -40,6 +41,8 @@ public class AnticsClient {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(EntityRegistry.ANT.get(), AntRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.RA_SIGN_BLOCK.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityRegistry.RA_HANGING_SIGN_BLOCK.get(), HangingSignRenderer::new);
     }
 }

@@ -1,13 +1,17 @@
 package dev.teamcitrus.antics.registry;
 
 import dev.teamcitrus.antics.Antics;
-import dev.teamcitrus.antics.block.*;
+import dev.teamcitrus.antics.block.BranchBlock;
+import dev.teamcitrus.antics.block.PineconeBlock;
+import dev.teamcitrus.antics.block.RAPillarWoodBlock;
+import dev.teamcitrus.antics.block.RAWoodBlock;
 import dev.teamcitrus.antics.block.sign.RAHangingSign;
 import dev.teamcitrus.antics.block.sign.RASign;
 import dev.teamcitrus.antics.world.tree.GreatHemlockTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.BlockGetter;
@@ -26,7 +30,7 @@ public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Antics.MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Antics.MODID);
     public static final BlockSetType GREAT_HEMLOCK = BlockSetType.register(new BlockSetType("great_hemlock"));
-    public static final WoodType GREAT_HEMLOCK_WOOD_TYPE = WoodType.register(new WoodType("great_hemlock", GREAT_HEMLOCK));
+    public static final WoodType GREAT_HEMLOCK_WOOD_TYPE = WoodType.register(new WoodType(Antics.MODID + ":great_hemlock", GREAT_HEMLOCK));
 
     public static final RegistryObject<RAPillarWoodBlock> GREAT_HEMLOCK_LOG = register("great_hemlock_log", () -> new RAPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
     public static final RegistryObject<Block> GREAT_HEMLOCK_WOOD = register("great_hemlock_wood", () -> new RAWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
@@ -44,14 +48,10 @@ public class BlockRegistry {
     public static final RegistryObject<ButtonBlock> GREAT_HEMLOCK_BUTTON = register("great_hemlock_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), GREAT_HEMLOCK, 30, true));
     public static final RegistryObject<Block> GREAT_HEMLOCK_LEAVES = register("great_hemlock_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> GREAT_HEMLOCK_SAPLING = register("great_hemlock_sapling", () -> new SaplingBlock(new GreatHemlockTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
-    // Sign
     public static final RegistryObject<StandingSignBlock> GREAT_HEMLOCK_SIGN = registerStandingSign("great_hemlock_sign", () -> new RASign.RAStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
     public static final RegistryObject<WallSignBlock> GREAT_HEMLOCK_WALL_SIGN = registerWallSign("great_hemlock_wall_sign", () -> new RASign.RAWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
-    // Hanging Sign
-    //public static final RegistryObject<CeilingHangingSignBlock> GREAT_HEMLOCK_HANGING_SIGN = register("great_hemlock_hanging_sign", () -> new RAHangingSign.CustomCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
-    //public static final RegistryObject<WallHangingSignBlock> GREAT_HEMLOCK_WALL_HANGING_SIGN = register("great_hemlock_wall_hanging_sign", () -> new RAHangingSign.CustomWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
-    // Boat
-    // Chest Boat
+    public static final RegistryObject<CeilingHangingSignBlock> GREAT_HEMLOCK_HANGING_SIGN = registerHangingCeilingSign("great_hemlock_hanging_sign", () -> new RAHangingSign.CustomCeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
+    public static final RegistryObject<WallHangingSignBlock> GREAT_HEMLOCK_WALL_HANGING_SIGN = registerHangingWallSign("great_hemlock_wall_hanging_sign", () -> new RAHangingSign.CustomWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), GREAT_HEMLOCK_WOOD_TYPE));
 
     public static final RegistryObject<Block> PINECONE_BLOCK = register("pinecone_block", () -> new PineconeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> EMPTY_PINECONE_BLOCK = register("empty_pinecone_block", () -> new PineconeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
@@ -82,6 +82,16 @@ public class BlockRegistry {
     }
 
     private static <T extends WallSignBlock> RegistryObject<T> registerWallSign(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
+
+    private static <T extends CeilingHangingSignBlock> RegistryObject<T> registerHangingCeilingSign(String name, Supplier<T> block) {
+        RegistryObject<T> blockRegistryObject = BLOCKS.register(name, block);
+        ITEMS.register(name, () -> new HangingSignItem(GREAT_HEMLOCK_HANGING_SIGN.get(), GREAT_HEMLOCK_WALL_HANGING_SIGN.get(), new Item.Properties()));
+        return blockRegistryObject;
+    }
+
+    private static <T extends WallHangingSignBlock> RegistryObject<T> registerHangingWallSign(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
 

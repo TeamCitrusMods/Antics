@@ -43,6 +43,8 @@ public class RALootProvider {
             dropSelf(BlockRegistry.GREAT_HEMLOCK_SAPLING.get());
             dropSelf(BlockRegistry.GREAT_HEMLOCK_SIGN.get());
             dropSelf(BlockRegistry.GREAT_HEMLOCK_WALL_SIGN.get());
+            dropSelf(BlockRegistry.GREAT_HEMLOCK_HANGING_SIGN.get());
+            dropSelf(BlockRegistry.GREAT_HEMLOCK_WALL_HANGING_SIGN.get());
             dropSelf(BlockRegistry.PINECONE_BLOCK.get());
             dropSelf(BlockRegistry.EMPTY_PINECONE_BLOCK.get());
             dropSelf(BlockRegistry.POLISHED_PINECONE_BLOCK.get());

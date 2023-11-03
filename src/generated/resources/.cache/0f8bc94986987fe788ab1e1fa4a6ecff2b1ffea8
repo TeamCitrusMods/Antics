@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-24T14:13:24.555426	Block States: antics
+// 1.20.1	2023-10-24T16:45:13.0393182	Block States: antics
 4332f6d799907170685d5ffde0740f569bb70473 assets/antics/blockstates/antsilk_cocoon.json
 a359dd13fe224369c4b2d3dd28e45f7ff81d7a3d assets/antics/blockstates/ant_chitin_block.json
 77b015371e27f2b8d3df9311aed86e3e15f178b0 assets/antics/blockstates/ant_chitin_tiles.json
@@ -57,7 +57,7 @@ ec2264f7766549b47076261729f96546fd335dc3 assets/antics/models/block/great_hemloc
 76b65cf3dffaf8251d6782ab097ddc9d42340734 assets/antics/models/block/great_hemlock_pressure_plate.json
 aeeebd622b7aef15229feb93d92a23f26bc8d4b7 assets/antics/models/block/great_hemlock_pressure_plate_down.json
 a66f9c2fa02d588b341bcf4e4cc4383b10a05ce5 assets/antics/models/block/great_hemlock_sapling.json
-ceca68b53f3ccfd034c1b6ea0a7caa0f64d6a34c assets/antics/models/block/great_hemlock_sign.json
+f43ae7a4330fd11dc9e94c054642935392258606 assets/antics/models/block/great_hemlock_sign.json
 462b5a5cd8f8ed820502de85509db56b95caa60d assets/antics/models/block/great_hemlock_slab.json
 1661a98b8a2333cc3423ee4d699736cbf6e52099 assets/antics/models/block/great_hemlock_slab_top.json
 2c9ecd5c03c32f3df3c70b66159fced11bc37a6f assets/antics/models/block/great_hemlock_stairs.json

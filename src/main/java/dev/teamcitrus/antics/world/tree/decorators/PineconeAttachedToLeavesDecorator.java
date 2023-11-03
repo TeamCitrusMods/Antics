@@ -3,7 +3,7 @@ package dev.teamcitrus.antics.world.tree.decorators;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import dev.teamcitrus.antics.registry.BlockRegistry;
-import dev.teamcitrus.antics.world.AnticsTreeDecoratorType;
+import dev.teamcitrus.antics.registry.TreeDecoratorTypeRegistry;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -70,6 +70,6 @@ public class PineconeAttachedToLeavesDecorator extends AttachedToLeavesDecorator
 
     @Override
     protected TreeDecoratorType<?> type() {
-        return AnticsTreeDecoratorType.PINECONE_ATTACHED_TO_LEAVES.get();
+        return TreeDecoratorTypeRegistry.PINECONE_ATTACHED_TO_LEAVES.get();
     }
 }

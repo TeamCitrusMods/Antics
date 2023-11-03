@@ -1,4 +1,4 @@
-package dev.teamcitrus.antics.entity;
+package dev.teamcitrus.antics.entity.signs;
 
 import dev.teamcitrus.antics.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;

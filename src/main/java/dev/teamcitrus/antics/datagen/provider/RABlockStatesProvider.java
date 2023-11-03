@@ -52,7 +52,7 @@ public class RABlockStatesProvider extends BlockStateProvider {
 
         simpleBlock(BlockRegistry.GREAT_HEMLOCK_SAPLING.get(), models().cross(ForgeRegistries.BLOCKS.getKey(BlockRegistry.GREAT_HEMLOCK_SAPLING.get()).getPath(), blockTexture(BlockRegistry.GREAT_HEMLOCK_SAPLING.get())).renderType("cutout"));
 
-        signBlock(BlockRegistry.GREAT_HEMLOCK_SIGN.get(), BlockRegistry.GREAT_HEMLOCK_WALL_SIGN.get(), modLoc("entity/signs/great_hemlock"));
+        signBlock(BlockRegistry.GREAT_HEMLOCK_SIGN.get(), BlockRegistry.GREAT_HEMLOCK_WALL_SIGN.get(), modLoc("block/great_hemlock_planks"));
 
         simpleBlockWithItem(BlockRegistry.POLISHED_PINECONE_BLOCK.get(), models().cubeAll("polished_pinecone_block", modLoc("block/polished_pinecone_block")));
 
