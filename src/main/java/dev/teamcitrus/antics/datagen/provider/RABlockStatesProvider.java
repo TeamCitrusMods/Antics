@@ -77,5 +77,7 @@ public class RABlockStatesProvider extends BlockStateProvider {
         simpleBlockItem(BlockRegistry.SPUN_ANTSILK.get(), models().withExistingParent("spun_antsilk", "cube_column"));
 
         simpleBlockWithItem(BlockRegistry.QUILTED_ANTSILK.get(), models().cubeAll("quilted_antsilk", modLoc("block/quilted_antsilk")));
+
+        simpleBlockWithItem(BlockRegistry.ANTHILL.get(), models().cubeColumn("", modLoc("block/loose_soil"), modLoc("block/formicary_mound")));
     }
 }

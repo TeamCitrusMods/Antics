@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "antics:block/formicary_mound",
+    "side": "antics:block/loose_soil"
+  }
+}

@@ -1,4 +1,5 @@
-// 1.20.1	2023-10-24T16:45:13.0393182	Block States: antics
+// 1.20.1	2023-12-07T18:40:14.2952006	Block States: antics
+f71e170ecece7adba09f3e8b2d3e08d36ea91d87 assets/antics/blockstates/anthill.json
 4332f6d799907170685d5ffde0740f569bb70473 assets/antics/blockstates/antsilk_cocoon.json
 a359dd13fe224369c4b2d3dd28e45f7ff81d7a3d assets/antics/blockstates/ant_chitin_block.json
 77b015371e27f2b8d3df9311aed86e3e15f178b0 assets/antics/blockstates/ant_chitin_tiles.json
@@ -27,6 +28,7 @@ b534467dad27c170fe0f6655958e961cf892c018 assets/antics/blockstates/quilted_antsi
 8874f3cca841ac836a568638c591cdf08a13bae9 assets/antics/blockstates/spun_antsilk.json
 07f720f3097d48c4e202c8e2ae0027a04d088a73 assets/antics/blockstates/stripped_great_hemlock_log.json
 2ec3fcb16344814d3dcd101396372e588e02728a assets/antics/blockstates/stripped_great_hemlock_wood.json
+554f1ba3f18da9f0b95b4c67cef4dcef779660e0 assets/antics/models/block/.json
 8d7add41bb428a13ace792d6dc14d58645173018 assets/antics/models/block/antsilk_cocoon.json
 a05f211ddb39fca9eeb14a0fc8272c9ee3c9b899 assets/antics/models/block/antsilk_cocoon_horizontal.json
 35696dc0514018420c1a61e6c0714a4f3ad66595 assets/antics/models/block/ant_chitin_block.json
@@ -78,6 +80,7 @@ b29112cafbc52fe628773cfc208a6667c97df09a assets/antics/models/block/spun_antsilk
 9709612e8e3363c60b36fe10f72c0c95df246afa assets/antics/models/block/stripped_great_hemlock_log.json
 893c11600417c7016e6e8b96fbb19cf345d36459 assets/antics/models/block/stripped_great_hemlock_log_horizontal.json
 8c70aec0c77a64477a44c6effbe479dd34610941 assets/antics/models/block/stripped_great_hemlock_wood.json
+bc0105648926bf80ddf2af04c0cf4c7ec2a3c4f9 assets/antics/models/item/anthill.json
 a1f879d2a080d4cc534c70e4a3ce6209765d7cd4 assets/antics/models/item/antsilk_cocoon.json
 d7c5c9ab278852472c09cba7d265a7107b369e7d assets/antics/models/item/ant_chitin_block.json
 7927994d1f1cfa2c0a7b4d20564adbf0d1509538 assets/antics/models/item/ant_chitin_tiles.json
