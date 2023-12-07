@@ -21,7 +21,7 @@ public class RADatagen {
         ExistingFileHelper file = event.getExistingFileHelper();
         PackOutput packOutput = gen.getPackOutput();
         CompletableFuture<HolderLookup.Provider> complete = event.getLookupProvider();
-        RATagProvider.Blocks blockTags = new RATagProvider.Blocks(packOutput, complete, file);
+        RATagProvider.AnticBlockTags blockTags = new RATagProvider.AnticBlockTags(packOutput, complete, file);
 
         gen.addProvider(event.includeClient(), new EnUsProvider(packOutput));
         gen.addProvider(event.includeServer(), new RABlockStatesProvider(packOutput, file));

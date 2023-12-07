@@ -12,6 +12,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -20,10 +21,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class RATagProvider {
-    public static class Blocks extends BlockTagsProvider {
+    public static class AnticBlockTags extends BlockTagsProvider {
         private final TagKey<Block> HEMLOCK_LOGS = modTag("hemlock_logs");
+        public static final TagKey<Block> ANTS_CAN_DIG = modTag("ants_can_dig");
 
-        public Blocks(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        public AnticBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
             super(output, lookupProvider, Antics.MODID, existingFileHelper);
         }
 
@@ -31,6 +33,7 @@ public class RATagProvider {
         protected void addTags(HolderLookup.Provider pProvider) {
             tag(HEMLOCK_LOGS).add(BlockRegistry.GREAT_HEMLOCK_LOG.get(), BlockRegistry.GREAT_HEMLOCK_WOOD.get(),
                     BlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get(), BlockRegistry.STRIPPED_GREAT_HEMLOCK_WOOD.get());
+            tag(ANTS_CAN_DIG).add(Blocks.DIRT);
             tag(BlockTags.LOGS).add(BlockRegistry.GREAT_HEMLOCK_LOG.get(), BlockRegistry.GREAT_HEMLOCK_WOOD.get(),
                     BlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get(), BlockRegistry.STRIPPED_GREAT_HEMLOCK_WOOD.get());
             tag(BlockTags.LOGS_THAT_BURN).add(BlockRegistry.GREAT_HEMLOCK_LOG.get(), BlockRegistry.GREAT_HEMLOCK_WOOD.get(),
@@ -65,7 +68,7 @@ public class RATagProvider {
             tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.GREAT_HEMLOCK_LEAVES.get());
         }
 
-        private TagKey<Block> modTag(String id) {
+        private static TagKey<Block> modTag(String id) {
             return TagKey.create(Registries.BLOCK, Antics.id(id));
         }
     }
