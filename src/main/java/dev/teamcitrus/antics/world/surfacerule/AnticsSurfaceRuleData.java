@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
@@ -46,15 +45,6 @@ public class AnticsSurfaceRuleData {
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(BiomeRegistry.GREAT_HEMLOCK_FOREST),
                         SurfaceRules.sequence(
-                                /*
-                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
-                                        SurfaceRules.sequence(
-                                                SurfaceRules.ifTrue(surfaceNoiseAbove(3D), COARSE_DIRT),
-                                                SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), PODZOL)
-                                        )
-                                ),
-                                 */
-
                                 SurfaceRules.sequence(coarseDirt, podzol),
                                 SurfaceRules.sequence(tuff),
 
@@ -70,9 +60,5 @@ public class AnticsSurfaceRuleData {
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());
-    }
-
-    private static SurfaceRules.ConditionSource surfaceNoiseAbove(double pValue) {
-        return SurfaceRules.noiseCondition(Noises.SURFACE, pValue / 8.25D, Double.MAX_VALUE);
     }
 }
