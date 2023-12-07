@@ -1,6 +1,6 @@
 package dev.teamcitrus.antics.block.sign;
 
-import dev.teamcitrus.antics.entity.signs.RASignBlockEntity;
+import dev.teamcitrus.antics.blockentity.signs.RASignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;

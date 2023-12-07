@@ -1,12 +1,11 @@
 package dev.teamcitrus.antics;
 
-import dev.teamcitrus.antics.entity.Ant;
+import dev.teamcitrus.antics.entity.AntEntity;
 import dev.teamcitrus.antics.registry.*;
 import dev.teamcitrus.antics.registry.TreeDecoratorTypeRegistry;
 import dev.teamcitrus.antics.world.regions.AnticsRegion;
 import dev.teamcitrus.antics.world.surfacerule.AnticsSurfaceRuleData;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -49,6 +48,6 @@ public class Antics {
     }
 
     private void entityAttributesEvent(final EntityAttributeCreationEvent event) {
-        event.put(EntityRegistry.ANT.get(), Ant.createAttributes());
+        event.put(EntityRegistry.ANT.get(), AntEntity.createAttributes());
     }
 }

@@ -1,6 +1,6 @@
 package dev.teamcitrus.antics.block.sign;
 
-import dev.teamcitrus.antics.entity.signs.RAHangingSignBlockEntity;
+import dev.teamcitrus.antics.blockentity.signs.RAHangingSignBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.WallHangingSignBlock;
