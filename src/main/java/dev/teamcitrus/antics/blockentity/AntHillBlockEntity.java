@@ -17,11 +17,13 @@ import net.minecraft.world.level.gameevent.GameEvent;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class AntHillBlockEntity extends BlockEntity {
     private final List<AntData> stored = new ArrayList<>();
+    private static final List<String> IGNORED_TAGS = Arrays.asList("Air", "ArmorDropChances", "ArmorItems", "Brain", "CanPickUpLoot", "DeathTime", "FallDistance", "FallFlying", "Fire", "HandDropChances", "HandItems", "HurtByTimestamp", "HurtTime", "LeftHanded", "Motion", "NoGravity", "OnGround", "PortalCooldown", "Pos", "Rotation", "CannotEnterHiveTicks", "TicksSincePollination", "CropsGrownSincePollination", "HivePos", "Passengers", "Leash", "UUID");
 
     public AntHillBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.ANTHILL.get(), pPos, pBlockState);
@@ -70,7 +72,8 @@ public class AntHillBlockEntity extends BlockEntity {
             return false;
         } else {
             CompoundTag compoundtag = pData.entityData.copy();
-            compoundtag.put("HivePos", NbtUtils.writeBlockPos(pPos));
+            removeIgnoredAntTags(compoundtag);
+            compoundtag.put("HillPos", NbtUtils.writeBlockPos(pPos));
             compoundtag.putBoolean("NoGravity", true);
             BlockPos blockpos = pPos.above();
             boolean flag = !pLevel.getBlockState(blockpos).getCollisionShape(pLevel, blockpos).isEmpty();
@@ -99,6 +102,12 @@ public class AntHillBlockEntity extends BlockEntity {
                     return false;
                 }
             }
+        }
+    }
+
+    private static void removeIgnoredAntTags(CompoundTag pTag) {
+        for(String s : IGNORED_TAGS) {
+            pTag.remove(s);
         }
     }
 
@@ -172,6 +181,7 @@ public class AntHillBlockEntity extends BlockEntity {
         final int minOccupationTicks;
 
         public AntData(CompoundTag pEntityData, int pTicksInHill, int pMinOccupationTicks) {
+            removeIgnoredAntTags(pEntityData);
             this.entityData = pEntityData;
             this.ticksInHill = pTicksInHill;
             this.minOccupationTicks = pMinOccupationTicks;
