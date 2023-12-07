@@ -16,23 +16,23 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Ant extends PathfinderMob implements GeoEntity {
+public class AntEntity extends PathfinderMob implements GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    public Ant(EntityType<? extends PathfinderMob> pEntityType, Level pLevel) {
+    public AntEntity(EntityType<? extends PathfinderMob> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     public static AttributeSupplier createAttributes() {
         return PathfinderMob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 8d)
-                .add(Attributes.MOVEMENT_SPEED, 0.3f)
+                .add(Attributes.MOVEMENT_SPEED, 0.4f)
                 .build();
     }
 
     @Override
     public void registerGoals() {
-        this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 0.4f));
+        this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 0.6f));
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0f));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }

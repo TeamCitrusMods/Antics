@@ -57,6 +57,7 @@ public class RALootProvider {
             dropSelf(BlockRegistry.ANTSILK_COCOON.get());
             dropSelf(BlockRegistry.QUILTED_ANTSILK.get());
             dropSelf(BlockRegistry.SPUN_ANTSILK.get());
+            dropWhenSilkTouch(BlockRegistry.ANTHILL.get());
         }
 
         @Override

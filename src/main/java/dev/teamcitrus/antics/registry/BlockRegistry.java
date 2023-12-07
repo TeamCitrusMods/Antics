@@ -1,10 +1,7 @@
 package dev.teamcitrus.antics.registry;
 
 import dev.teamcitrus.antics.Antics;
-import dev.teamcitrus.antics.block.BranchBlock;
-import dev.teamcitrus.antics.block.PineconeBlock;
-import dev.teamcitrus.antics.block.RAPillarWoodBlock;
-import dev.teamcitrus.antics.block.RAWoodBlock;
+import dev.teamcitrus.antics.block.*;
 import dev.teamcitrus.antics.block.sign.RAHangingSign;
 import dev.teamcitrus.antics.block.sign.RASign;
 import dev.teamcitrus.antics.world.tree.GreatHemlockTreeGrower;
@@ -68,6 +65,8 @@ public class BlockRegistry {
     public static final RegistryObject<RotatedPillarBlock> ANTSILK_COCOON = register("antsilk_cocoon", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
     public static final RegistryObject<RotatedPillarBlock> SPUN_ANTSILK = register("spun_antsilk", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
     public static final RegistryObject<Block> QUILTED_ANTSILK = register("quilted_antsilk", () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+
+    public static final RegistryObject<Block> ANTHILL = register("anthill", () -> new AntHillBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, block);

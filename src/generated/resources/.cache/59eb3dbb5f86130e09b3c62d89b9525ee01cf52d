@@ -1,4 +1,5 @@
-// 1.20.1	2023-10-24T16:53:19.9959419	Loot Tables
+// 1.20.1	2023-12-07T14:20:17.1997957	Loot Tables
+8969c8a53c6c99835eeae05dbb9d4c3d08a1069b data/antics/loot_tables/blocks/anthill.json
 5f6482880d524a08497fa368b497d3673d37f7eb data/antics/loot_tables/blocks/antsilk_cocoon.json
 76189598092992cb655bb0bba5dc3bc0487a3c02 data/antics/loot_tables/blocks/ant_chitin_block.json
 ff57bc94af7b3f4db859dea1025a24781388bc39 data/antics/loot_tables/blocks/ant_chitin_tiles.json
