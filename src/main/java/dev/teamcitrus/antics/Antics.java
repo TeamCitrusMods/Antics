@@ -2,7 +2,6 @@ package dev.teamcitrus.antics;
 
 import dev.teamcitrus.antics.entity.AntEntity;
 import dev.teamcitrus.antics.registry.*;
-import dev.teamcitrus.antics.registry.TreeDecoratorTypeRegistry;
 import dev.teamcitrus.antics.world.regions.AnticsRegion;
 import dev.teamcitrus.antics.world.surfacerule.AnticsSurfaceRuleData;
 import net.minecraft.resources.ResourceLocation;
@@ -40,14 +39,14 @@ public class Antics {
         return new ResourceLocation(Antics.MODID, name);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             Regions.register(new AnticsRegion(id("overworld"), 10));
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, AnticsSurfaceRuleData.makeRules());
         });
     }
 
-    private void entityAttributesEvent(final EntityAttributeCreationEvent event) {
+    private void entityAttributesEvent(EntityAttributeCreationEvent event) {
         event.put(EntityRegistry.ANT.get(), AntEntity.createAttributes());
     }
 }
