@@ -29,6 +29,6 @@ public class RADatagen {
         gen.addProvider(event.includeServer(), RALootProvider.create(packOutput));
         gen.addProvider(event.includeServer(), blockTags);
         gen.addProvider(event.includeServer(), new RATagProvider.Items(packOutput, complete, blockTags.contentsGetter(), file));
-        gen.addProvider(event.includeServer(), new RAWorldgenProvider(packOutput, complete));
+        gen.addProvider(event.includeServer(), new RADatapackProvider(packOutput, complete));
     }
 }

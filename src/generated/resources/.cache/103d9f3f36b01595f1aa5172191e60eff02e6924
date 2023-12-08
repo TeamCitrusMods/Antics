@@ -1,4 +1,5 @@
-// 1.20.1	2023-10-18T15:35:40.3011497	Registries
+// 1.20.1	2023-12-08T14:24:23.5276594	Registries
+ba2f6e52a99ee6ef2c2423c4def22067b9fc56bc data/antics/damage_type/falling_pinecone.json
 30cd5b68740cfa0c3f52ccbdcdb60a99d18dbac7 data/antics/worldgen/biome/great_hemlock_forest.json
 7a6f447c403cecfe502c71e535f00f5d609e601f data/antics/worldgen/configured_feature/great_hemlock.json
 3eafcb769dec5ab72abd720c6229c1119d62d8ad data/antics/worldgen/configured_feature/hemlock_flower.json
