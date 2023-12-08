@@ -1,2 +1,2 @@
-# Resource Ants
+# Antics
 An Ant Resource Gathering Mod
