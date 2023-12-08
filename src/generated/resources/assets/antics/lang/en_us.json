@@ -24,6 +24,7 @@
   "block.antics.ornate_ant_chitin": "Ornate Ant Chitin",
   "block.antics.pinecone_block": "Pinecone",
   "block.antics.pinecone_frame": "Pinecone Frame",
+  "block.antics.pinecone_garden_block": "Pinecone Garden Block",
   "block.antics.polished_pinecone_block": "Polished Pinecone",
   "block.antics.polished_pinecone_tile": "Polished Pinecone Tile",
   "block.antics.quilted_antsilk": "Quilted Antsilk",
@@ -32,5 +33,6 @@
   "block.antics.stripped_great_hemlock_wood": "Stripped Great Hemlock Wood",
   "death.attack.falling_pinecone": "%s was killed by a falling pinecone",
   "item.antics.ant_chitin": "Ant Chitin",
+  "item.antics.ant_spawn_egg": "Ant Spawn Egg",
   "itemGroup.antics": "Antics"
 }
