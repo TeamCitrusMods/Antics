@@ -1,6 +1,6 @@
 package dev.teamcitrus.antics;
 
-import dev.teamcitrus.antics.entity.AntEntity;
+import dev.teamcitrus.antics.entity.ant.AbstractAnt;
 import dev.teamcitrus.antics.registry.*;
 import dev.teamcitrus.antics.world.regions.AnticsRegion;
 import dev.teamcitrus.antics.world.surfacerule.AnticsSurfaceRuleData;
@@ -47,6 +47,6 @@ public class Antics {
     }
 
     private void entityAttributesEvent(EntityAttributeCreationEvent event) {
-        event.put(EntityRegistry.ANT.get(), AntEntity.createAttributes());
+        event.put(EntityRegistry.ANT.get(), AbstractAnt.createAttributes());
     }
 }

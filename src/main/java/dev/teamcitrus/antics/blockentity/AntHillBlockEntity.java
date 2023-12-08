@@ -1,6 +1,6 @@
 package dev.teamcitrus.antics.blockentity;
 
-import dev.teamcitrus.antics.entity.AntEntity;
+import dev.teamcitrus.antics.entity.ant.AbstractAnt;
 import dev.teamcitrus.antics.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -82,7 +82,7 @@ public class AntHillBlockEntity extends BlockEntity {
             } else {
                 Entity entity = EntityType.loadEntityRecursive(compoundtag, pLevel, (entity1) -> entity1);
                 if (entity != null) {
-                    if (entity instanceof AntEntity ant) {
+                    if (entity instanceof AbstractAnt ant) {
                         if (pStoredInHives != null) {
                             pStoredInHives.add(ant);
                         }
