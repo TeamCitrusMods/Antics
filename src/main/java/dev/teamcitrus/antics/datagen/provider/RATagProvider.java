@@ -33,7 +33,7 @@ public class RATagProvider {
         protected void addTags(HolderLookup.Provider pProvider) {
             tag(HEMLOCK_LOGS).add(BlockRegistry.GREAT_HEMLOCK_LOG.get(), BlockRegistry.GREAT_HEMLOCK_WOOD.get(),
                     BlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get(), BlockRegistry.STRIPPED_GREAT_HEMLOCK_WOOD.get());
-            tag(ANTS_CAN_DIG).add(Blocks.DIRT);
+            tag(ANTS_CAN_DIG).addTag(BlockTags.DIRT);
             tag(BlockTags.LOGS).add(BlockRegistry.GREAT_HEMLOCK_LOG.get(), BlockRegistry.GREAT_HEMLOCK_WOOD.get(),
                     BlockRegistry.STRIPPED_GREAT_HEMLOCK_LOG.get(), BlockRegistry.STRIPPED_GREAT_HEMLOCK_WOOD.get());
             tag(BlockTags.LOGS_THAT_BURN).add(BlockRegistry.GREAT_HEMLOCK_LOG.get(), BlockRegistry.GREAT_HEMLOCK_WOOD.get(),
