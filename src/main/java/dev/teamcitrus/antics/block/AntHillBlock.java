@@ -10,12 +10,18 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
 public class AntHillBlock extends BaseEntityBlock {
     public AntHillBlock(Properties pProperties) {
         super(pProperties);
+    }
+
+    @Override
+    public @Nullable PushReaction getPistonPushReaction(BlockState state) {
+        return PushReaction.IGNORE;
     }
 
     @Override
