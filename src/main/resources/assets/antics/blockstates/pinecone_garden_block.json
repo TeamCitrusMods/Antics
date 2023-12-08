@@ -1,0 +1,120 @@
+{
+  "variants": {
+    "facing=east": [
+      {
+        "model": "antics:block/pinecone_garden_variant_0",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_1",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_2",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_3",
+        "x": 90,
+        "y": 270
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "antics:block/pinecone_garden_variant_0",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_1",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_2",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_3",
+        "x": 90,
+        "y": 180
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "antics:block/pinecone_garden_variant_0",
+        "x": 90
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_1",
+        "x": 90
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_2",
+        "x": 90
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_3",
+        "x": 90
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "antics:block/pinecone_garden_variant_0",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_1",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_3",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "facing=up": [
+      {
+        "model": "antics:block/pinecone_garden_variant_0",
+        "x": 180
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_1",
+        "x": 180
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_2",
+        "x": 180
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_3",
+        "x": 180
+      }
+    ],
+    "facing=down": [
+      {
+        "model": "antics:block/pinecone_garden_variant_0"
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_1"
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_2"
+      },
+      {
+        "model": "antics:block/pinecone_garden_variant_3"
+      }
+    ]
+  }
+}

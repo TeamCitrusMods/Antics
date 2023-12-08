@@ -52,6 +52,7 @@ public class BlockRegistry {
 
     public static final RegistryObject<Block> PINECONE_BLOCK = register("pinecone_block", () -> new PineconeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> EMPTY_PINECONE_BLOCK = register("empty_pinecone_block", () -> new PineconeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> PINECONE_GARDEN = register("pinecone_garden_block", () -> new PineconeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> POLISHED_PINECONE_BLOCK = register("polished_pinecone_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
     public static final RegistryObject<Block> POLISHED_PINECONE_TILE = register("polished_pinecone_tile", () -> new Block(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
     public static final RegistryObject<RotatedPillarBlock> PINECONE_FRAME = register("pinecone_frame", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().noOcclusion().isValidSpawn(BlockRegistry::never).isRedstoneConductor(BlockRegistry::never).isSuffocating(BlockRegistry::never)));
