@@ -31,6 +31,7 @@ import java.util.List;
  *   - fix ants jumping super high in water
  *   - create AbstractAnt parent class
  */
+@SuppressWarnings("deprecation")
 public class AntEntity extends PathfinderMob implements GeoEntity {
 
 
