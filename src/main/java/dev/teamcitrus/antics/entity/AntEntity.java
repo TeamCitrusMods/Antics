@@ -17,6 +17,21 @@ import net.minecraft.world.entity.ai.sensing.Sensor;
 import net.minecraft.world.entity.ai.sensing.SensorType;
 import net.minecraft.world.entity.schedule.Activity;
 import net.minecraft.world.level.Level;
+import net.tslat.smartbrainlib.api.SmartBrainOwner;
+import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
+import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
+import net.tslat.smartbrainlib.api.core.behaviour.FirstApplicableBehaviour;
+import net.tslat.smartbrainlib.api.core.behaviour.OneRandomBehaviour;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.look.LookAtTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.misc.Idle;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.move.MoveToWalkTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.path.SetRandomWalkTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetPlayerLookTarget;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTarget;
+import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
+import net.tslat.smartbrainlib.api.core.sensor.vanilla.HurtBySensor;
+import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyLivingEntitySensor;
+import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyPlayersSensor;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -32,11 +47,11 @@ import java.util.List;
  *   - create AbstractAnt parent class
  */
 @SuppressWarnings("deprecation")
-public class AntEntity extends PathfinderMob implements GeoEntity {
+public class AntEntity extends PathfinderMob implements GeoEntity, SmartBrainOwner<AntEntity> {
 
 
-    protected static final List<SensorType<? extends Sensor<? super AntEntity>>> SENSOR_TYPES = ImmutableList.of(
-            SensorType.NEAREST_LIVING_ENTITIES, SensorType.HURT_BY);
+//    protected static final List<SensorType<? extends Sensor<? super AntEntity>>> SENSOR_TYPES = ImmutableList.of(
+//            SensorType.NEAREST_LIVING_ENTITIES, SensorType.HURT_BY);
     protected static final ImmutableList<MemoryModuleType<?>> MEMORY_TYPES = ImmutableList.of(
             MemoryModuleType.LOOK_TARGET, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES,
             MemoryModuleType.WALK_TARGET, MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE,
@@ -56,12 +71,45 @@ public class AntEntity extends PathfinderMob implements GeoEntity {
                 .build();
     }
 
+    @Override
+    public List<ExtendedSensor<AntEntity>> getSensors() {
+        return List.of(
+                new NearbyLivingEntitySensor<>(),
+                new NearbyPlayersSensor<>(),
+                new HurtBySensor<>()
+        );
+    }
+
+//    @Override
+//    protected Brain<?> makeBrain(Dynamic<?> pDynamic) {
+//        Brain<AntEntity> brain = this.brainProvider().makeBrain(pDynamic);
+//        registerBrainActivities(brain);
+//        return brain;
+//    }
+
 
     @Override
-    protected Brain<?> makeBrain(Dynamic<?> pDynamic) {
-        Brain<AntEntity> brain = this.brainProvider().makeBrain(pDynamic);
-        registerBrainActivities(brain);
-        return brain;
+    public BrainActivityGroup<? extends AntEntity> getCoreTasks() {
+        return BrainActivityGroup.coreTasks(
+                new LookAtTarget<>(),
+                new MoveToWalkTarget<>(),
+                new Swim(0.4f),
+                new AnimalPanic(1.0f)
+        );
+    }
+
+    @Override
+    public BrainActivityGroup<? extends AntEntity> getIdleTasks() {
+        return BrainActivityGroup.idleTasks(
+                new FirstApplicableBehaviour<AntEntity>(
+                        new SetPlayerLookTarget<>(),
+                        new SetRandomLookTarget<>()
+                ),
+                new OneRandomBehaviour<>(
+                        new SetRandomWalkTarget<>().speedModifier(0.6f),
+                        new Idle<>().runFor(entity -> entity.getRandom().nextInt(40, 100))
+                )
+        );
     }
 
     private void registerBrainActivities(Brain<AntEntity> brain) {
@@ -87,7 +135,8 @@ public class AntEntity extends PathfinderMob implements GeoEntity {
 
     @Override
     protected Brain.Provider<AntEntity> brainProvider() {
-        return Brain.provider(MEMORY_TYPES, SENSOR_TYPES);
+//        return Brain.provider(MEMORY_TYPES, SENSOR_TYPES);
+        return new SmartBrainProvider<>(this);
     }
 
     public void updateActivity() {
@@ -95,19 +144,20 @@ public class AntEntity extends PathfinderMob implements GeoEntity {
     }
 
 
-    @Override
-    public Brain<AntEntity> getBrain() {
-        return (Brain<AntEntity>) super.getBrain();
-    }
+//    @Override
+//    public Brain<AntEntity> getBrain() {
+//        return (Brain<AntEntity>) super.getBrain();
+//    }
 
     @Override
     protected void customServerAiStep() {
-        this.level().getProfiler().push("antBrain");
-        this.getBrain().tick((ServerLevel)this.level(), this);
-        this.level().getProfiler().pop();
-        this.level().getProfiler().push("antActivityUpdate");
-        updateActivity();
-        this.level().getProfiler().pop();
+//        this.level().getProfiler().push("antBrain");
+//        this.getBrain().tick((ServerLevel)this.level(), this);
+//        this.level().getProfiler().pop();
+//        this.level().getProfiler().push("antActivityUpdate");
+//        updateActivity();
+//        this.level().getProfiler().pop();
+        tickBrain(this);
 
         super.customServerAiStep();
     }
