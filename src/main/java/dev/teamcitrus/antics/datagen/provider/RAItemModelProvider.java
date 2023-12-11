@@ -30,7 +30,7 @@ public class RAItemModelProvider extends ItemModelProvider {
         basicItem(BlockRegistry.PINECONE_GARDEN.get().asItem());
         basicItem(BlockRegistry.BRANCH.get().asItem());
         basicItem(ItemRegistry.ANT_CHITIN.get());
-        spawnEggItem(ItemRegistry.ANT_SPAWN_EGG.get());
+        spawnEggItem(ItemRegistry.FARMER_ANT_SPAWN_EGG.get());
     }
 
     public void controlledTextureBasicItem(Item item, String folder) {

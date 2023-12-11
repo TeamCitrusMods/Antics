@@ -1,6 +1,6 @@
 package dev.teamcitrus.antics;
 
-import dev.teamcitrus.antics.client.render.AntRenderer;
+import dev.teamcitrus.antics.client.render.FarmerAntRenderer;
 import dev.teamcitrus.antics.registry.BlockEntityRegistry;
 import dev.teamcitrus.antics.registry.BlockRegistry;
 import dev.teamcitrus.antics.registry.EntityRegistry;
@@ -41,7 +41,7 @@ public class AnticsClient {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityRegistry.ANT.get(), AntRenderer::new);
+        event.registerEntityRenderer(EntityRegistry.FARMER_ANT.get(), FarmerAntRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.RA_SIGN_BLOCK.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.RA_HANGING_SIGN_BLOCK.get(), HangingSignRenderer::new);
     }

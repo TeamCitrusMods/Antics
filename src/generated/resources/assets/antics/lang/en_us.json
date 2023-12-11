@@ -32,7 +32,8 @@
   "block.antics.stripped_great_hemlock_log": "Stripped Great Hemlock Log",
   "block.antics.stripped_great_hemlock_wood": "Stripped Great Hemlock Wood",
   "death.attack.falling_pinecone": "%s was killed by a falling pinecone",
+  "entity.antics.farmer_ant": "Farmer Ant",
   "item.antics.ant_chitin": "Ant Chitin",
-  "item.antics.ant_spawn_egg": "Ant Spawn Egg",
+  "item.antics.farmer_ant_spawn_egg": "Farmer Ant Spawn Egg",
   "itemGroup.antics": "Antics"
 }

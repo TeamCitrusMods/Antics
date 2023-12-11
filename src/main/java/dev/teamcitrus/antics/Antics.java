@@ -47,6 +47,6 @@ public class Antics {
     }
 
     private void entityAttributesEvent(EntityAttributeCreationEvent event) {
-        event.put(EntityRegistry.ANT.get(), AbstractAnt.createAttributes());
+        event.put(EntityRegistry.FARMER_ANT.get(), AbstractAnt.createAttributes());
     }
 }

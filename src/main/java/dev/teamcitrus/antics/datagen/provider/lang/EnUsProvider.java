@@ -2,8 +2,10 @@ package dev.teamcitrus.antics.datagen.provider.lang;
 
 import dev.teamcitrus.antics.Antics;
 import dev.teamcitrus.antics.registry.BlockRegistry;
+import dev.teamcitrus.antics.registry.EntityRegistry;
 import dev.teamcitrus.antics.registry.ItemRegistry;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WallHangingSignBlock;
@@ -23,6 +25,7 @@ public class EnUsProvider extends LanguageProvider {
     protected void addTranslations() {
         Set<RegistryObject<Block>> blocks = new HashSet<>(BlockRegistry.BLOCKS.getEntries());
         Set<RegistryObject<Item>> items = new HashSet<>(ItemRegistry.ITEMS.getEntries());
+        Set<RegistryObject<EntityType<?>>> entities = new HashSet<>(EntityRegistry.ENTITY_TYPES.getEntries());
 
         takeAll(blocks, i -> i.get() instanceof WallSignBlock);
         takeAll(blocks, i -> i.get() instanceof WallHangingSignBlock);
@@ -38,6 +41,12 @@ public class EnUsProvider extends LanguageProvider {
 
         items.forEach(i -> {
             String name = i.get().getDescriptionId().replaceFirst("item\\.antics\\.", "");
+            name = makeProper(toTitleCase(name, "_"));
+            add(i.get().getDescriptionId(), name);
+        });
+
+        entities.forEach(i -> {
+            String name = i.get().getDescriptionId().replaceFirst("entity\\.antics\\.", "");
             name = makeProper(toTitleCase(name, "_"));
             add(i.get().getDescriptionId(), name);
         });
