@@ -4,6 +4,7 @@ import dev.teamcitrus.antics.entity.ant.AbstractAnt;
 import dev.teamcitrus.antics.registry.*;
 import dev.teamcitrus.antics.world.regions.AnticsRegion;
 import dev.teamcitrus.antics.world.surfacerule.AnticsSurfaceRuleData;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
