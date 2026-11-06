@@ -11,15 +11,15 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 
 @Mod(Antics.MODID)
 public class Antics {
     public static final String MODID = "antics";
-    public static final Logger LOGGER = LogManager.getLogger(MODID);
+    public static final Logger LOGGER = LoggerFactory.getLogger("Antics");
 
     public Antics() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
